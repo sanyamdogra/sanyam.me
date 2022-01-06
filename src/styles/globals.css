@@ -1,0 +1,33 @@
+:root {
+  --max-width: 650px;
+  --color-primary: #cf455c;
+  --color-secondary: #971549;
+  --primary-background: white;
+  --text-color-primary: black;
+}
+[data-theme="dark"] {
+  --primary-background: black;
+  --text-color-primary: white;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, Inter, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--text-color-primary);
+  background-color: var(--primary-background);
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  padding: 0;
+}
