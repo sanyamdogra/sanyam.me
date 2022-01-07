@@ -1,11 +1,12 @@
 :root {
   --max-width: 650px;
   --color-primary: #cf455c;
-  --color-secondary: #971549;
   --primary-background: white;
   --text-color-primary: black;
+  --text-color-grey: rgb(102 102 102);
 }
 [data-theme="dark"] {
+  --color-primary: #cf455c;
   --primary-background: black;
   --text-color-primary: white;
 }
@@ -18,6 +19,8 @@ body {
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: var(--text-color-primary);
   background-color: var(--primary-background);
+  font-size: 18px;
+  line-height: 1.5;
 }
 a {
   color: inherit;

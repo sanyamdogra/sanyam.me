@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
 import { ContentCenter } from "../components/shared/layoutUtils";
+import Spotify from "../components/spotify";
 
 const Home: NextPage = () => {
   return (
@@ -13,51 +14,22 @@ const Home: NextPage = () => {
       </Head>
       <ContentCenter>
         <MainTitle>
-          Not a <ColorTitle>Blog!</ColorTitle>
+          Hey, I am <ColorTitle>Sanyam Dogra!</ColorTitle>
         </MainTitle>
       </ContentCenter>
-      <IntroBlock>
-        I am Frontend Engineer currently working at <b>Rapyuta Robotics</b>. I
-        am Frontend Engineer currently working at Rapyuta Robotics.I am Frontend
-        Engineer currently working at Rapyuta Robotics.I am Frontend Engineer
-        currently working at Rapyuta Robotics.I am Frontend Engineer currently
-        working at Rapyuta Robotics.
-      </IntroBlock>
-      <IntroBlock>
-        I am Frontend Engineer currently working at <b>Rapyuta Robotics</b>. I
-        am Frontend Engineer currently working at Rapyuta Robotics.I am Frontend
-        Engineer currently working at Rapyuta Robotics.I am Frontend Engineer
-        currently working at Rapyuta Robotics.I am Frontend Engineer currently
-        working at Rapyuta Robotics.
-      </IntroBlock>
-      <IntroBlock>
-        I am Frontend Engineer currently working at <b>Rapyuta Robotics</b>. I
-        am Frontend Engineer currently working at Rapyuta Robotics.I am Frontend
-        Engineer currently working at Rapyuta Robotics.I am Frontend Engineer
-        currently working at Rapyuta Robotics.I am Frontend Engineer currently
-        working at Rapyuta Robotics.
-      </IntroBlock>
-      <IntroBlock>
-        I am Frontend Engineer currently working at <b>Rapyuta Robotics</b>. I
-        am Frontend Engineer currently working at Rapyuta Robotics.I am Frontend
-        Engineer currently working at Rapyuta Robotics.I am Frontend Engineer
-        currently working at Rapyuta Robotics.I am Frontend Engineer currently
-        working at Rapyuta Robotics.
-      </IntroBlock>
-      <IntroBlock>
-        I am Frontend Engineer currently working at <b>Rapyuta Robotics</b>. I
-        am Frontend Engineer currently working at Rapyuta Robotics.I am Frontend
-        Engineer currently working at Rapyuta Robotics.I am Frontend Engineer
-        currently working at Rapyuta Robotics.I am Frontend Engineer currently
-        working at Rapyuta Robotics.
-      </IntroBlock>
-      <IntroBlock>
-        I am Frontend Engineer currently working at <b>Rapyuta Robotics</b>. I
-        am Frontend Engineer currently working at Rapyuta Robotics.I am Frontend
-        Engineer currently working at Rapyuta Robotics.I am Frontend Engineer
-        currently working at Rapyuta Robotics.I am Frontend Engineer currently
-        working at Rapyuta Robotics.
-      </IntroBlock>
+      <ContentCenter>
+        <p>
+          <i>&quot; I make and break front-ends. &quot;</i>
+        </p>
+      </ContentCenter>
+      <p>
+        I am currently working as a Frontend Engineer at Rapyuta Robotics. I
+        love building products using React & TypeScript. I like The Weeknd,
+        Linkin Park <i>(yeah music in general)</i>. I&apos;ll be honest with
+        you, I needed an excuse to get my hands on Next JS, styled-components
+        and TypeScript, that&apos;s why I revamped this page and also due to my
+        sudden urge to write blogs :)
+      </p>
     </>
   );
 };
@@ -65,15 +37,15 @@ const Home: NextPage = () => {
 export default Home;
 
 const MainTitle = styled.h1`
-  font-size: 70px;
+  font-size: 50px;
   font-family: "Ubuntu";
 `;
 
-const IntroBlock = styled.div`
+const IntroBlock = styled.p`
   margin: 5rem 0;
 `;
 
 const ColorTitle = styled.span`
-  font-size: 70px;
+  font-size: 50px;
   color: var(--color-primary);
 `;

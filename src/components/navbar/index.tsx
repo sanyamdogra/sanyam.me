@@ -8,11 +8,11 @@ interface Props {}
 
 const NAV_LINKS = [
   {
-    title: "Blog",
+    title: "blog",
     to: "/blog",
   },
-  { title: "Resume", to: "/resume" },
-  { title: "About", to: "/about" },
+  { title: "resume", to: "/resume" },
+  { title: "about", to: "/about" },
 ];
 
 const Navbar: React.FC = (props: Props) => {
@@ -44,7 +44,7 @@ const Navbar: React.FC = (props: Props) => {
     <NavbarBody>
       <NavbarInner>
         <Link href="/" passHref>
-          <NavLogo>S</NavLogo>
+          <NavLogo />
         </Link>
         <NavLinks>
           {NAV_LINKS.map((item, idx) => (
@@ -109,7 +109,7 @@ const NavLink = styled.li`
 const NavLogo = styled.div`
   height: 25px;
   width: 25px;
-  border-radius: 5px;
+  border-radius: 50%;
   background-color: var(--color-primary);
   cursor: pointer;
   display: flex;
