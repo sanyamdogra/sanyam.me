@@ -40,7 +40,8 @@ export default Home;
 
 const MainTitle = styled.h1`
   font-size: 50px;
-  font-family: "Ubuntu";
+  font-family: Ubuntu, Inter;
+  font-weight: 800;
 `;
 
 const IntroBlock = styled.p`
