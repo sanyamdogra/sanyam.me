@@ -3,7 +3,6 @@ import Head from "next/head";
 import styled from "styled-components";
 import { ContentCenter } from "../components/shared/layoutUtils";
 import { TextHighlight } from "../components/shared/typography";
-import Spotify from "../components/spotify";
 
 const Home: NextPage = () => {
   return (
@@ -15,7 +14,7 @@ const Home: NextPage = () => {
       </Head>
       <ContentCenter>
         <MainTitle>
-          Hey, I am <ColorTitle>Sanyam Dogra!</ColorTitle>
+          Hey, I am <TextHighlight>Sanyam Dogra!</TextHighlight>
         </MainTitle>
       </ContentCenter>
       <ContentCenter>
@@ -42,13 +41,11 @@ const MainTitle = styled.h1`
   font-size: 50px;
   font-family: Ubuntu, Inter;
   font-weight: 800;
+  @media only screen and (max-width: 764px) {
+    font-size: 40px;
+  }
 `;
 
 const IntroBlock = styled.p`
   margin: 5rem 0;
-`;
-
-const ColorTitle = styled.span`
-  font-size: 50px;
-  color: var(--color-primary);
 `;
