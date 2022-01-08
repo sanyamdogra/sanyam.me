@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Link from "next/link";
 import { FiSun } from "react-icons/fi";
 import { IoMdMoon } from "react-icons/io";
+import { FaGithub, FaTwitter } from "react-icons/fa";
+import { IconContainer } from "../shared/icons";
 
 interface Props {}
 
@@ -35,9 +37,44 @@ const Navbar: React.FC = (props: Props) => {
   };
 
   const modeIcon: React.ReactNode = dataTheme ? (
-    <IoMdMoon aria-label="Enable light mode!" />
+    <IoMdMoon aria-label="Enable light mode!" title="Enable light mode!" />
   ) : (
-    <FiSun aria-label="Enable dark mode!" />
+    <FiSun aria-label="Enable dark mode!" title="Enable dark mode!" />
+  );
+
+  const DesktopNavLinksWrapper = () => (
+    <>
+      {NAV_LINKS.map((item, idx) => (
+        <NavLink key={idx} arial-label={item.title}>
+          <Link href={item.to} passHref>
+            {item.title}
+          </Link>
+        </NavLink>
+      ))}
+      <NavLink>
+        <IconContainer
+          href="https://twitter.com/sdlord07"
+          target="_blank"
+          rel="noopener noreferrer"
+          $styledOnHover
+        >
+          <FaTwitter aria-label="Twitter @sdlord07" title="Twitter @sdlord07" />
+        </IconContainer>
+      </NavLink>
+      <NavLink>
+        <IconContainer
+          href="https://github.com/sanyamdogra"
+          target="_blank"
+          rel="noopener noreferrer"
+          $styledOnHover
+        >
+          <FaGithub
+            aria-label="Github @sanyamdogra"
+            title="Github @sanyamdogra"
+          />
+        </IconContainer>
+      </NavLink>
+    </>
   );
 
   return (
@@ -47,17 +84,11 @@ const Navbar: React.FC = (props: Props) => {
           <NavLogo />
         </Link>
         <NavLinks>
-          {NAV_LINKS.map((item, idx) => (
-            <NavLink key={idx} arial-label={item.title}>
-              <Link href={item.to} passHref>
-                {item.title}
-              </Link>
-            </NavLink>
-          ))}
+          <NavLinkDesktop>
+            <DesktopNavLinksWrapper />
+          </NavLinkDesktop>
           <NavLink>
-            <IconWrapper aria-label="Mode Toggler" onClick={handleColorMode}>
-              {modeIcon}
-            </IconWrapper>
+            <IconWrapper onClick={handleColorMode}>{modeIcon}</IconWrapper>
           </NavLink>
         </NavLinks>
       </NavbarInner>
@@ -67,7 +98,7 @@ const Navbar: React.FC = (props: Props) => {
 
 export default Navbar;
 
-const IconWrapper = styled.a`
+const IconWrapper = styled(IconContainer).attrs({ as: "button" })`
   text-decoration: none;
   font-size: 24px;
   cursor: pointer;
@@ -95,7 +126,6 @@ const NavLinks = styled.ul`
   display: flex;
   flex-direction: row;
   align-items: center;
-  line-height: 0;
 `;
 
 const NavLink = styled.li`
@@ -103,7 +133,21 @@ const NavLink = styled.li`
   flex-direction: row;
   align-items: center;
   list-style: none;
-  margin-left: 2rem;
+  margin-left: 1.2rem;
+  line-height: 0;
+`;
+
+const NavLinkDesktop = styled.li`
+  display: none;
+
+  @media only screen and (min-width: 764px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style: none;
+    margin-left: 1.2rem;
+    line-height: 0;
+  }
 `;
 
 const NavLogo = styled.div`

@@ -23,7 +23,7 @@ const Spotify = () => {
       <SpotifyIcon>
         <FaSpotify />
       </SpotifyIcon>
-      <SpotifyName>Spotify - </SpotifyName>
+      <SpotifyName>Spotify -</SpotifyName>
       <MusicStatus>{playingMessage}</MusicStatus>
     </PlayingWrapper>
   );
@@ -35,6 +35,7 @@ const PlayingWrapper = styled.div`
   display: flex;
   align-items: center;
   margin: 2rem 0;
+  font-size: 16px;
 `;
 
 const MusicStatus = styled.span``;

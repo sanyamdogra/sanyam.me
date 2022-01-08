@@ -31,11 +31,11 @@ const FooterContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  line-height: 0;
-  margin: 0.5rem 0;
   font-size: 14px;
+  text-align: center;
 `;
 const VercelWrapper = styled.span`
   font-size: 18px;
   margin: 0 0.2rem;
+  line-height: 0;
 `;
