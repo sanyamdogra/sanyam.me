@@ -11,8 +11,9 @@ const Spotify = () => {
 
   const playingMessage: ReactNode = data?.isPlaying ? (
     <p>
-      Currently listening to <TextHighlight>{data?.title}</TextHighlight> by
-      <TextHighlight> {data?.artist}</TextHighlight>
+      Currently listening to <TextHighlight>{data?.title ?? ""} </TextHighlight>
+      by
+      <TextHighlight> {data?.artist ?? ""}</TextHighlight>
     </p>
   ) : (
     <p>Not Playing</p>
@@ -33,7 +34,6 @@ export default Spotify;
 const PlayingWrapper = styled.div`
   display: flex;
   align-items: center;
-  line-height: 0;
   margin: 2rem 0;
 `;
 
@@ -43,6 +43,7 @@ const SpotifyIcon = styled.div`
   color: rgb(30, 215, 96);
   font-size: 30px;
   margin-right: 0.5rem;
+  line-height: 0;
 `;
 
 const SpotifyName = styled.span`
