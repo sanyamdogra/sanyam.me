@@ -55,7 +55,7 @@ const Navbar: React.FC = (props: Props) => {
             </NavLink>
           ))}
           <NavLink>
-            <IconWrapper aria-label="test" onClick={handleColorMode}>
+            <IconWrapper aria-label="Mode Toggler" onClick={handleColorMode}>
               {modeIcon}
             </IconWrapper>
           </NavLink>

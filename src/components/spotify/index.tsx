@@ -4,25 +4,26 @@ import styled from "styled-components";
 import useSWR from "swr";
 import { SpotifyNowPlaying } from "../../services/spotify/types";
 import swrFetcher from "../../services/swr/service";
+import { TextHighlight } from "../shared/typography";
 
 const Spotify = () => {
   const { data } = useSWR<SpotifyNowPlaying>("/api/spotify", swrFetcher);
 
-  const playingMessage: ReactNode | string = data?.isPlaying ? (
-    <>
-      Currently listening to <ColorName>{data?.title}</ColorName> by
-      <ColorName>{data?.artist}</ColorName>
-    </>
+  const playingMessage: ReactNode = data?.isPlaying ? (
+    <p>
+      Currently listening to <TextHighlight>{data?.title}</TextHighlight> by
+      <TextHighlight> {data?.artist}</TextHighlight>
+    </p>
   ) : (
-    "Not Playing"
+    <p>Not Playing</p>
   );
-
   return (
     <PlayingWrapper>
       <SpotifyIcon>
         <FaSpotify />
       </SpotifyIcon>
-      <SpotifyName>Spotify - </SpotifyName> {playingMessage}
+      <SpotifyName>Spotify - </SpotifyName>
+      <MusicStatus>{playingMessage}</MusicStatus>
     </PlayingWrapper>
   );
 };
@@ -36,13 +37,9 @@ const PlayingWrapper = styled.div`
   margin: 2rem 0;
 `;
 
-const ColorName = styled.span`
-  color: var(--color-primary);
-  margin: 0 0.3rem;
-  font-weight: 600;
-`;
+const MusicStatus = styled.span``;
 
-const SpotifyIcon = styled.span`
+const SpotifyIcon = styled.div`
   color: rgb(30, 215, 96);
   font-size: 30px;
   margin-right: 0.5rem;

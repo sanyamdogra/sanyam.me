@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styled from "styled-components";
 import { ContentCenter } from "../components/shared/layoutUtils";
+import { TextHighlight } from "../components/shared/typography";
 import Spotify from "../components/spotify";
 
 const Home: NextPage = () => {
@@ -23,12 +24,13 @@ const Home: NextPage = () => {
         </p>
       </ContentCenter>
       <p>
-        I am currently working as a Frontend Engineer at Rapyuta Robotics. I
-        love building products using React & TypeScript. I like The Weeknd,
-        Linkin Park <i>(yeah music in general)</i>. I&apos;ll be honest with
-        you, I needed an excuse to get my hands on Next JS, styled-components
-        and TypeScript, that&apos;s why I revamped this page and also due to my
-        sudden urge to write blogs :)
+        I am currently working as a Frontend Engineer at
+        <TextHighlight> Rapyuta Robotics</TextHighlight>. I love building
+        products using React & TypeScript. I like The Weeknd, Linkin Park
+        <i>(yeah music in general)</i>. I&apos;ll be honest with you, I needed
+        an excuse to get my hands on Next JS, TypeScript and styled-components,
+        that&apos;s why I revamped this page and also due to my sudden urge to
+        write blogs :)
       </p>
     </>
   );

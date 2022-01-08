@@ -2,9 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { IoLogoVercel } from "react-icons/io5";
 
-interface Props {}
-
-const Footer: React.FC = (props: Props) => {
+const Footer: React.FC = () => {
   return (
     <FooterBase>
       <FooterContent>
@@ -12,9 +10,9 @@ const Footer: React.FC = (props: Props) => {
       </FooterContent>
       <FooterContent>
         Powered by Vercel
-        <IconWrapper>
+        <VercelWrapper>
           <IoLogoVercel />
-        </IconWrapper>
+        </VercelWrapper>
       </FooterContent>
     </FooterBase>
   );
@@ -37,9 +35,7 @@ const FooterContent = styled.div`
   margin: 0.5rem 0;
   font-size: 14px;
 `;
-const IconWrapper = styled.a`
-  text-decoration: none;
+const VercelWrapper = styled.span`
   font-size: 18px;
-  cursor: pointer;
   margin: 0 0.2rem;
 `;

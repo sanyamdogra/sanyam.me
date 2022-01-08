@@ -1,3 +1,6 @@
+import { createGlobalStyle } from "styled-components";
+
+export const GlobalStyles = createGlobalStyle`
 :root {
   --max-width: 650px;
   --color-primary: #cf455c;
@@ -34,3 +37,4 @@ a {
 ul {
   padding: 0;
 }
+`;
