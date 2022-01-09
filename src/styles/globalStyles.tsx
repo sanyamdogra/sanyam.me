@@ -8,12 +8,13 @@ export const GlobalStyles = createGlobalStyle`
   --primary-background: white;
   --text-color-primary: black;
   --text-color-grey: rgb(102 102 102);
+  --color-divider: rgba(102, 102, 102, 0.3);
 }
 [data-theme="dark"] {
   --color-primary: #cf455c;
   --primary-background: black;
   --text-color-primary: white;
-  --color-primary-transparent: rgba(207, 69, 92, 0.9);
+  --color-primary-transparent: rgba(207, 69, 92, 0.95);
 }
 
 html,
@@ -38,5 +39,6 @@ a {
 
 ul {
   padding: 0;
+  margin: 0;
 }
 `;

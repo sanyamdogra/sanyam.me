@@ -49,7 +49,6 @@ const VercelWrapper = styled.span`
 const Divider = styled.div`
   height: 1px;
   width: 100%;
-  background-color: var(--text-color-grey);
+  background-color: var(--color-divider);
   margin-top: 2rem;
-  opacity: 0.4;
 `;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import { FiSun, FiMenu } from "react-icons/fi";
+import { FiSun, FiMenu, FiX } from "react-icons/fi";
 import { IoMdMoon } from "react-icons/io";
 import { FaGithub, FaTwitter } from "react-icons/fa";
 import { IconContainer } from "../shared/icons";
@@ -122,6 +122,12 @@ const Navbar: React.FC = () => {
     </>
   );
 
+  const sideBarIcon = showDrawer ? (
+    <FiX aria-label="Close sidebar" title="Close sidebar" />
+  ) : (
+    <FiMenu aria-label="Open sidebar" title="Open sidebar" />
+  );
+
   return (
     <NavbarBody>
       <NavbarInner>
@@ -134,18 +140,16 @@ const Navbar: React.FC = () => {
             <IconWrapper onClick={handleColorMode}>{modeIcon}</IconWrapper>
           </NavLink>
           <NavLink mobile>
-            <IconWrapper onClick={handleSideBar}>
-              <FiMenu aria-label="Open sidebar" title="Open sidebar" />
-            </IconWrapper>
+            <IconWrapper onClick={handleSideBar}>{sideBarIcon}</IconWrapper>
           </NavLink>
         </NavLinks>
-        <TestComponent
+        <SideBar
           initial="closed"
           animate={showDrawer ? "open" : "closed"}
           variants={variants}
         >
           <MobileNavLinksWrapper />
-        </TestComponent>
+        </SideBar>
       </NavbarInner>
     </NavbarBody>
   );
@@ -153,7 +157,7 @@ const Navbar: React.FC = () => {
 
 export default Navbar;
 
-const TestComponent = styled(motion.div)`
+const SideBar = styled(motion.ul)`
   height: 100vh;
   width: 100vw;
   position: fixed;
