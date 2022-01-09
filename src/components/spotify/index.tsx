@@ -34,15 +34,14 @@ export default Spotify;
 const PlayingWrapper = styled.div`
   display: flex;
   align-items: center;
-  margin: 2rem 0;
-  font-size: 16px;
+  font-size: 14px;
 `;
 
 const MusicStatus = styled.span``;
 
 const SpotifyIcon = styled.div`
   color: rgb(30, 215, 96);
-  font-size: 30px;
+  font-size: 28px;
   margin-right: 0.5rem;
   line-height: 0;
 `;
@@ -50,4 +49,5 @@ const SpotifyIcon = styled.div`
 const SpotifyName = styled.span`
   color: var(--text-color-grey);
   margin-right: 0.3rem;
+  white-space: nowrap;
 `;

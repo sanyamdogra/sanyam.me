@@ -1,10 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import Spotify from "../spotify";
 import { IoLogoVercel } from "react-icons/io5";
+import { ContentCenter } from "../shared/layoutUtils";
 
 const Footer: React.FC = () => {
   return (
     <FooterBase>
+      <ContentCenter>
+        <Divider />
+      </ContentCenter>
+      <Spotify />
       <FooterContent>
         Made with NextJS, TypeScript and styled-components.
       </FooterContent>
@@ -38,4 +44,12 @@ const VercelWrapper = styled.span`
   font-size: 18px;
   margin: 0 0.2rem;
   line-height: 0;
+`;
+
+const Divider = styled.div`
+  height: 1px;
+  width: 100%;
+  background-color: var(--text-color-grey);
+  margin-top: 2rem;
+  opacity: 0.4;
 `;

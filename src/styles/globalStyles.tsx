@@ -3,7 +3,8 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
 :root {
   --max-width: 650px;
-  --color-primary: #cf455c;
+  --color-primary: rgb(207, 69, 92);
+  --color-primary-transparent: rgba(255,255,255,0.93);
   --primary-background: white;
   --text-color-primary: black;
   --text-color-grey: rgb(102 102 102);
@@ -12,6 +13,7 @@ export const GlobalStyles = createGlobalStyle`
   --color-primary: #cf455c;
   --primary-background: black;
   --text-color-primary: white;
+  --color-primary-transparent: rgba(207, 69, 92, 0.9);
 }
 
 html,

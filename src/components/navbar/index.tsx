@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import { FiSun } from "react-icons/fi";
+import { FiSun, FiMenu } from "react-icons/fi";
 import { IoMdMoon } from "react-icons/io";
 import { FaGithub, FaTwitter } from "react-icons/fa";
 import { IconContainer } from "../shared/icons";
-
-interface Props {}
+import { motion, Variants } from "framer-motion";
 
 const NAV_LINKS = [
   {
@@ -16,15 +15,22 @@ const NAV_LINKS = [
   { title: "resume", to: "/resume" },
   { title: "about", to: "/about" },
 ];
+const variants: Variants = {
+  open: { opacity: 1, x: 0 },
+  closed: { opacity: 0, x: "-100%" },
+};
 
-const Navbar: React.FC = (props: Props) => {
+const Navbar: React.FC = () => {
   const [dataTheme, setDataTheme] = useState<boolean>(false);
+  const [showDrawer, setShowDrawer] = useState<boolean>(false);
 
   const checkColorMode = useCallback(() => {
     if (dataTheme) {
       document.documentElement.setAttribute("data-theme", "dark");
+      window.localStorage.setItem("theme", "dark");
     } else {
       document.documentElement.removeAttribute("data-theme");
+      window.localStorage.setItem("theme", "light");
     }
   }, [dataTheme]);
   useEffect(() => {
@@ -34,6 +40,10 @@ const Navbar: React.FC = (props: Props) => {
   const handleColorMode = (e: React.MouseEvent) => {
     e.preventDefault();
     setDataTheme(!dataTheme);
+  };
+  const handleSideBar = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowDrawer(!showDrawer);
   };
 
   const modeIcon: React.ReactNode = dataTheme ? (
@@ -45,13 +55,13 @@ const Navbar: React.FC = (props: Props) => {
   const DesktopNavLinksWrapper = () => (
     <>
       {NAV_LINKS.map((item, idx) => (
-        <NavLink key={idx} arial-label={item.title}>
+        <NavLink key={idx} arial-label={item.title} desktop>
           <Link href={item.to} passHref>
             {item.title}
           </Link>
         </NavLink>
       ))}
-      <NavLink>
+      <NavLink desktop>
         <IconContainer
           href="https://twitter.com/sdlord07"
           target="_blank"
@@ -61,7 +71,42 @@ const Navbar: React.FC = (props: Props) => {
           <FaTwitter aria-label="Twitter @sdlord07" title="Twitter @sdlord07" />
         </IconContainer>
       </NavLink>
-      <NavLink>
+      <NavLink desktop>
+        <IconContainer
+          href="https://github.com/sanyamdogra"
+          target="_blank"
+          rel="noopener noreferrer"
+          $styledOnHover
+        >
+          <FaGithub
+            aria-label="Github @sanyamdogra"
+            title="Github @sanyamdogra"
+          />
+        </IconContainer>
+      </NavLink>
+    </>
+  );
+
+  const MobileNavLinksWrapper = () => (
+    <>
+      {NAV_LINKS.map((item, idx) => (
+        <NavLink key={idx} arial-label={item.title} drawer>
+          <Link href={item.to} passHref>
+            {item.title}
+          </Link>
+        </NavLink>
+      ))}
+      <NavLink drawer>
+        <IconContainer
+          href="https://twitter.com/sdlord07"
+          target="_blank"
+          rel="noopener noreferrer"
+          $styledOnHover
+        >
+          <FaTwitter aria-label="Twitter @sdlord07" title="Twitter @sdlord07" />
+        </IconContainer>
+      </NavLink>
+      <NavLink drawer>
         <IconContainer
           href="https://github.com/sanyamdogra"
           target="_blank"
@@ -84,13 +129,23 @@ const Navbar: React.FC = (props: Props) => {
           <NavLogo />
         </Link>
         <NavLinks>
-          <NavLinkDesktop>
-            <DesktopNavLinksWrapper />
-          </NavLinkDesktop>
+          <DesktopNavLinksWrapper />
           <NavLink>
             <IconWrapper onClick={handleColorMode}>{modeIcon}</IconWrapper>
           </NavLink>
+          <NavLink mobile>
+            <IconWrapper onClick={handleSideBar}>
+              <FiMenu aria-label="Open sidebar" title="Open sidebar" />
+            </IconWrapper>
+          </NavLink>
         </NavLinks>
+        <TestComponent
+          initial="closed"
+          animate={showDrawer ? "open" : "closed"}
+          variants={variants}
+        >
+          <MobileNavLinksWrapper />
+        </TestComponent>
       </NavbarInner>
     </NavbarBody>
   );
@@ -98,55 +153,21 @@ const Navbar: React.FC = (props: Props) => {
 
 export default Navbar;
 
-const IconWrapper = styled(IconContainer).attrs({ as: "button" })`
-  text-decoration: none;
-  font-size: 24px;
-  cursor: pointer;
-`;
-
-const NavbarBody = styled.header`
-  position: sticky;
+const TestComponent = styled(motion.div)`
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 0;
   top: 0;
-  width: 100%;
-  background-color: var(--primary-background);
-`;
-
-const NavbarInner = styled.nav`
+  right: 0;
+  background-color: var(--color-primary-transparent);
   display: flex;
-  align-items: center;
-  padding: 1rem 0;
-  /* max-width: var(--max-width); */
-  margin: 0 auto;
-  justify-content: space-between;
-  width: 100%;
-  max-height: 70px;
-`;
-
-const NavLinks = styled.ul`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-
-const NavLink = styled.li`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  list-style: none;
-  margin-left: 1.2rem;
-  line-height: 0;
-`;
-
-const NavLinkDesktop = styled.li`
-  display: none;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0.2;
 
   @media only screen and (min-width: 764px) {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    list-style: none;
-    margin-left: 1.2rem;
-    line-height: 0;
+    display: none;
   }
 `;
 
@@ -161,4 +182,54 @@ const NavLogo = styled.div`
   justify-content: center;
   color: white;
   font-weight: 800;
+`;
+
+const IconWrapper = styled(IconContainer).attrs({ as: "button" })`
+  text-decoration: none;
+  font-size: 24px;
+  cursor: pointer;
+`;
+
+const NavbarBody = styled.header`
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: var(--primary-background);
+  ${IconWrapper}, ${NavLogo} {
+    z-index: 10;
+  }
+`;
+
+const NavbarInner = styled.nav`
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  margin: 0 auto;
+  justify-content: space-between;
+  width: 100%;
+  max-height: 70px;
+`;
+
+const NavLinks = styled.ul`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+const NavLink = styled.li<{
+  desktop?: boolean;
+  mobile?: boolean;
+  drawer?: boolean;
+}>`
+  display: ${(props) => (props.desktop ? "none" : "flex")};
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  margin-left: 1.2rem;
+  margin-top: ${(props) => (props.drawer ? " 1rem" : "0")};
+  font-size: ${(props) => props.drawer && " 20px"};
+
+  @media only screen and (min-width: 764px) {
+    display: ${(props) => (props.mobile ? "none" : "flex")};
+  }
 `;
