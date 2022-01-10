@@ -6,7 +6,6 @@ import Document, {
   DocumentContext,
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-import { DataTheme } from "../common/types";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -63,13 +62,13 @@ function checkThemePresent() {
     if (hasTheme) {
       return theme;
     }
-    return DataTheme.LIGHT;
+    return "light";
   }
   const colorTheme = getThemePreset();
   const root = document.documentElement;
   root.style.setProperty("--initial-data-theme", colorTheme);
-  if (colorTheme === DataTheme.DARK) {
-    document.documentElement.setAttribute("data-theme", DataTheme.DARK);
+  if (colorTheme === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
   }
 }
 
