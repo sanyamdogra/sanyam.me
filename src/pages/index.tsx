@@ -1,21 +1,17 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import styled from "styled-components";
+import { DocumentHead } from "../components/shared/documentHead";
 import { ContentCenter } from "../components/shared/layoutUtils";
-import { TextHighlight } from "../components/shared/typography";
+import { TextHighlight, PageTitle } from "../components/shared/typography";
 
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Blog: Sanyam Dogra</title>
-        <meta name="description" content="Personal blog of Sanyam Dogra" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <DocumentHead pageTitle="Base" />
       <ContentCenter>
-        <MainTitle>
+        <PageTitle>
           Hey, I am <TextHighlight>Sanyam Dogra!</TextHighlight>
-        </MainTitle>
+        </PageTitle>
       </ContentCenter>
       <ContentCenter>
         <p>
@@ -25,7 +21,7 @@ const Home: NextPage = () => {
       <p>
         I am currently working as a Frontend Engineer at
         <TextHighlight> Rapyuta Robotics</TextHighlight>. I love building
-        products using React & TypeScript. I like The Weeknd, Linkin Park
+        products using React + TypeScript. I like The Weeknd, Linkin Park
         <i>(yeah music in general)</i>. I&apos;ll be honest with you, I needed
         an excuse to get my hands on Next JS, TypeScript and styled-components,
         that&apos;s why I revamped this page and also due to my sudden urge to
@@ -36,15 +32,6 @@ const Home: NextPage = () => {
 };
 
 export default Home;
-
-const MainTitle = styled.h1`
-  font-size: 50px;
-  font-family: Ubuntu, Inter;
-  font-weight: 800;
-  @media only screen and (max-width: 764px) {
-    font-size: 40px;
-  }
-`;
 
 const IntroBlock = styled.p`
   margin: 5rem 0;
