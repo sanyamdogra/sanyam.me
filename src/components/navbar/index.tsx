@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Link from "next/link";
 import { FiSun, FiMenu, FiX } from "react-icons/fi";
 import { IoMdMoon } from "react-icons/io";
 import { FaGithub, FaTwitter } from "react-icons/fa";
 import { IconContainer } from "../shared/icons";
 import { motion, Variants } from "framer-motion";
+import { DataTheme } from "../../common/types";
 
 const NAV_LINKS = [
   {
@@ -24,18 +25,33 @@ const Navbar: React.FC = () => {
   const [dataTheme, setDataTheme] = useState<boolean>(false);
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
 
+  useEffect(() => {
+    const root = window.document.documentElement;
+    const value = root.style.getPropertyValue("--initial-data-theme");
+    setDataTheme(value === DataTheme.DARK);
+  }, []);
+
   const checkColorMode = useCallback(() => {
     if (dataTheme) {
-      document.documentElement.setAttribute("data-theme", "dark");
-      window.localStorage.setItem("theme", "dark");
+      document.documentElement.setAttribute("data-theme", DataTheme.DARK);
+      window.localStorage.setItem("theme", DataTheme.DARK);
     } else {
       document.documentElement.removeAttribute("data-theme");
-      window.localStorage.setItem("theme", "light");
+      window.localStorage.setItem("theme", DataTheme.LIGHT);
     }
   }, [dataTheme]);
+
   useEffect(() => {
     checkColorMode();
   }, [dataTheme, checkColorMode]);
+
+  useEffect(() => {
+    if (showDrawer) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.removeProperty("overflow");
+    }
+  }, [showDrawer]);
 
   const handleColorMode = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -230,8 +246,13 @@ const NavLink = styled.li<{
   align-items: center;
   list-style: none;
   margin-left: 1.2rem;
-  margin-top: ${(props) => (props.drawer ? " 1rem" : "0")};
-  font-size: ${(props) => props.drawer && " 20px"};
+  ${(props) =>
+    props.drawer &&
+    css`
+      margin-top: 1rem;
+      font-size: 24px;
+      font-weight: 700;
+    `};
 
   @media only screen and (min-width: 764px) {
     display: ${(props) => (props.mobile ? "none" : "flex")};

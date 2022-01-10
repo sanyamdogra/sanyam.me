@@ -6,8 +6,9 @@ import Document, {
   DocumentContext,
 } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+import { DataTheme } from "../common/types";
 
-class MyDocument extends Document {
+export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
     const orignalRenderPage = ctx.renderPage;
@@ -46,6 +47,7 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
+          <script dangerouslySetInnerHTML={{ __html: setInitialColorTheme }} />
           <Main />
           <NextScript />
         </body>
@@ -54,4 +56,23 @@ class MyDocument extends Document {
   }
 }
 
-export default MyDocument;
+function checkThemePresent() {
+  function getThemePreset() {
+    const theme = window.localStorage.getItem("theme");
+    const hasTheme = typeof theme === "string";
+    if (hasTheme) {
+      return theme;
+    }
+    return DataTheme.LIGHT;
+  }
+  const colorTheme = getThemePreset();
+  const root = document.documentElement;
+  root.style.setProperty("--initial-data-theme", colorTheme);
+  if (colorTheme === DataTheme.DARK) {
+    document.documentElement.setAttribute("data-theme", DataTheme.DARK);
+  }
+}
+
+const setInitialColorTheme = `(function () {
+  ${checkThemePresent.toString()}checkThemePresent();
+})()`;
