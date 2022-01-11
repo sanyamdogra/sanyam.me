@@ -7,13 +7,13 @@ import { FaGithub, FaTwitter } from "react-icons/fa";
 import { IconContainer } from "../shared/icons";
 import { motion, Variants } from "framer-motion";
 import { DataTheme } from "../../common/types";
+import { useRouter } from "next/router";
 
 const NAV_LINKS = [
   {
     title: "blog",
     to: "/blog",
   },
-  { title: "resume", to: "/resume" },
   { title: "about", to: "/about" },
 ];
 const variants: Variants = {
@@ -24,12 +24,18 @@ const variants: Variants = {
 const Navbar: React.FC = () => {
   const [dataTheme, setDataTheme] = useState<boolean>(false);
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
+  const { asPath } = useRouter();
 
   useEffect(() => {
     const root = window.document.documentElement;
     const value = root.style.getPropertyValue("--initial-data-theme");
     setDataTheme(value === DataTheme.DARK);
   }, []);
+
+  useEffect(() => {
+    setShowDrawer(false);
+    document.body.style.removeProperty("overflow");
+  }, [asPath]);
 
   const checkColorMode = useCallback(() => {
     if (dataTheme) {
