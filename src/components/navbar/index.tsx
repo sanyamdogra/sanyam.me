@@ -218,6 +218,10 @@ const NavbarBody = styled.header`
   ${IconWrapper}, ${NavLogo} {
     z-index: 10;
   }
+
+  @media only screen and (max-width: 764px) {
+    padding: 0 1rem;
+  }
 `;
 
 const NavbarInner = styled.nav`
@@ -228,6 +232,7 @@ const NavbarInner = styled.nav`
   justify-content: space-between;
   width: 100%;
   max-height: 70px;
+  max-width: var(--max-width);
 `;
 
 const NavLinks = styled.ul`

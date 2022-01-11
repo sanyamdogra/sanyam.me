@@ -14,11 +14,13 @@ const LayoutBase = styled.div`
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <LayoutBase>
+    <>
       <Navbar />
-      {children}
-      <Footer />
-    </LayoutBase>
+      <LayoutBase>
+        {children}
+        <Footer />
+      </LayoutBase>
+    </>
   );
 };
 

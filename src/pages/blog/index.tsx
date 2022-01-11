@@ -1,10 +1,23 @@
-import type { NextPage } from "next";
-import styled from "styled-components";
+import React from "react";
 import { DocumentHead } from "../../components/shared/documentHead";
 import { ContentCenter } from "../../components/shared/layoutUtils";
 import { TextHighlight, PageTitle } from "../../components/shared/typography";
+import { allBlogs } from ".contentlayer/data";
+import { pick } from "@contentlayer/client";
+import { BlogView } from "../../common/types";
+import { BlogViewCard } from "../../components/blogViewCard";
+import styled from "styled-components";
 
-const Blog: NextPage = () => {
+export async function getStaticProps() {
+  const blogs = allBlogs.map((blog) =>
+    pick(blog, ["title", "slug", "publishedAt"])
+  );
+  return { props: { blogs } };
+}
+interface Props {
+  blogs: BlogView[];
+}
+const Blogs: React.FC<Props> = ({ blogs }) => {
   return (
     <>
       <DocumentHead pageTitle="Blog" />
@@ -18,9 +31,23 @@ const Blog: NextPage = () => {
           <i>&quot; These are stories &quot;</i>
         </p>
       </ContentCenter>
-      <p>Work in progress! Come back after some time</p>
+      <BlogViewWrapper>
+        {blogs?.map((b, idx) => (
+          <BlogViewCard
+            title={b.title}
+            href={b.slug}
+            key={idx}
+            date={b.publishedAt}
+          />
+        ))}
+      </BlogViewWrapper>
     </>
   );
 };
 
-export default Blog;
+export default Blogs;
+
+const BlogViewWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;

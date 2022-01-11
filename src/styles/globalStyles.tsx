@@ -41,4 +41,14 @@ ul {
   padding: 0;
   margin: 0;
 }
+
+code[class*="language-"],
+  pre[class*="language-"] {
+    color: var(--text-color-grey)
+}
+
+.rehype-code-title {
+    color: blue
+}
+
 `;
