@@ -3,7 +3,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import { allBlogs } from ".contentlayer/data";
 import type { Blog } from ".contentlayer/types";
 import { DocumentHead } from "../../components/shared/documentHead";
-import { PageTitle } from "../../components/shared/typography";
+import { PageTitle, TextHighlight } from "../../components/shared/typography";
 
 interface Props {
   post: Blog;
@@ -16,6 +16,7 @@ export const Post: React.FC<Props> = ({ post }) => {
     <>
       <DocumentHead pageTitle={post.title} description={post.summary} />
       <PageTitle>{post.title}</PageTitle>
+      <TextHighlight>{post.publishedAt}</TextHighlight>
       <Component
         components={
           {

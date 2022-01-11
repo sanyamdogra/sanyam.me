@@ -10,7 +10,7 @@ import styled from "styled-components";
 
 export async function getStaticProps() {
   const blogs = allBlogs.map((blog) =>
-    pick(blog, ["title", "slug", "publishedAt"])
+    pick(blog, ["title", "slug", "publishedAt", "summary"])
   );
   return { props: { blogs } };
 }
@@ -28,18 +28,21 @@ const Blogs: React.FC<Props> = ({ blogs }) => {
       </ContentCenter>
       <ContentCenter>
         <p>
-          <i>&quot; These are stories &quot;</i>
+          <i>&quot; These are mere stories &quot;</i>
         </p>
       </ContentCenter>
       <BlogViewWrapper>
-        {blogs?.map((b, idx) => (
-          <BlogViewCard
-            title={b.title}
-            href={b.slug}
-            key={idx}
-            date={b.publishedAt}
-          />
-        ))}
+        {blogs
+          ?.map((b, idx) => (
+            <BlogViewCard
+              title={b.title}
+              href={b.slug}
+              key={idx}
+              date={b.publishedAt}
+              summary={b.summary}
+            />
+          ))
+          .reverse()}
       </BlogViewWrapper>
     </>
   );
