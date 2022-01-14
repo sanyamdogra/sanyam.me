@@ -14,7 +14,7 @@ export const BlogViewCard: React.FC<Props> = ({
   title,
   href,
   date,
-  summary,
+  summary
 }) => {
   return (
     <Link href={`/blog/${href}/`} passHref>
@@ -40,6 +40,7 @@ const Card = styled.a`
   border: 2px solid #d1d1d1;
   border-radius: 10px;
   padding: 1rem;
+  text-decoration: none;
 `;
 
 const CardHeading = styled.div`

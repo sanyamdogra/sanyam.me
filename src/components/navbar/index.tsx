@@ -12,13 +12,13 @@ import { useRouter } from "next/router";
 const NAV_LINKS = [
   {
     title: "blog",
-    to: "/blog",
+    to: "/blog"
   },
-  { title: "about", to: "/about" },
+  { title: "about", to: "/about" }
 ];
 const variants: Variants = {
   open: { opacity: 1, x: 0 },
-  closed: { opacity: 0, x: "-100%" },
+  closed: { opacity: 0, x: "-100%" }
 };
 
 const Navbar: React.FC = () => {
@@ -69,9 +69,9 @@ const Navbar: React.FC = () => {
   };
 
   const modeIcon: React.ReactNode = dataTheme ? (
-    <IoMdMoon aria-label="Enable light mode!" title="Enable light mode!" />
+    <IoMdMoon aria-label='Enable light mode!' title='Enable light mode!' />
   ) : (
-    <FiSun aria-label="Enable dark mode!" title="Enable dark mode!" />
+    <FiSun aria-label='Enable dark mode!' title='Enable dark mode!' />
   );
 
   const DesktopNavLinksWrapper = () => (
@@ -85,24 +85,24 @@ const Navbar: React.FC = () => {
       ))}
       <NavLink desktop>
         <IconContainer
-          href="https://twitter.com/sdlord07"
-          target="_blank"
-          rel="noopener noreferrer"
+          href='https://twitter.com/sdlord07'
+          target='_blank'
+          rel='noopener noreferrer'
           $styledOnHover
         >
-          <FaTwitter aria-label="Twitter @sdlord07" title="Twitter @sdlord07" />
+          <FaTwitter aria-label='Twitter @sdlord07' title='Twitter @sdlord07' />
         </IconContainer>
       </NavLink>
       <NavLink desktop>
         <IconContainer
-          href="https://github.com/sanyamdogra"
-          target="_blank"
-          rel="noopener noreferrer"
+          href='https://github.com/sanyamdogra'
+          target='_blank'
+          rel='noopener noreferrer'
           $styledOnHover
         >
           <FaGithub
-            aria-label="Github @sanyamdogra"
-            title="Github @sanyamdogra"
+            aria-label='Github @sanyamdogra'
+            title='Github @sanyamdogra'
           />
         </IconContainer>
       </NavLink>
@@ -120,24 +120,24 @@ const Navbar: React.FC = () => {
       ))}
       <NavLink drawer>
         <IconContainer
-          href="https://twitter.com/sdlord07"
-          target="_blank"
-          rel="noopener noreferrer"
+          href='https://twitter.com/sdlord07'
+          target='_blank'
+          rel='noopener noreferrer'
           $styledOnHover
         >
-          <FaTwitter aria-label="Twitter @sdlord07" title="Twitter @sdlord07" />
+          <FaTwitter aria-label='Twitter @sdlord07' title='Twitter @sdlord07' />
         </IconContainer>
       </NavLink>
       <NavLink drawer>
         <IconContainer
-          href="https://github.com/sanyamdogra"
-          target="_blank"
-          rel="noopener noreferrer"
+          href='https://github.com/sanyamdogra'
+          target='_blank'
+          rel='noopener noreferrer'
           $styledOnHover
         >
           <FaGithub
-            aria-label="Github @sanyamdogra"
-            title="Github @sanyamdogra"
+            aria-label='Github @sanyamdogra'
+            title='Github @sanyamdogra'
           />
         </IconContainer>
       </NavLink>
@@ -145,15 +145,15 @@ const Navbar: React.FC = () => {
   );
 
   const sideBarIcon = showDrawer ? (
-    <FiX aria-label="Close sidebar" title="Close sidebar" />
+    <FiX aria-label='Close sidebar' title='Close sidebar' />
   ) : (
-    <FiMenu aria-label="Open sidebar" title="Open sidebar" />
+    <FiMenu aria-label='Open sidebar' title='Open sidebar' />
   );
 
   return (
     <NavbarBody>
       <NavbarInner>
-        <Link href="/" passHref>
+        <Link href='/' passHref>
           <NavLogo />
         </Link>
         <NavLinks>
@@ -166,7 +166,7 @@ const Navbar: React.FC = () => {
           </NavLink>
         </NavLinks>
         <SideBar
-          initial="closed"
+          initial='closed'
           animate={showDrawer ? "open" : "closed"}
           variants={variants}
         >
@@ -267,5 +267,9 @@ const NavLink = styled.li<{
 
   @media only screen and (min-width: 764px) {
     display: ${(props) => (props.mobile ? "none" : "flex")};
+  }
+
+  a {
+    text-decoration: none;
   }
 `;
