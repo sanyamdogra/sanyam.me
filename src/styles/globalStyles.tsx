@@ -9,6 +9,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     --color-primary: rgb(207, 69, 92);
     --color-primary-transparent: rgba(255, 255, 255, 0.93);
     --primary-background: white;
+    --primary-background-transparent: rgba(255, 255, 255, 0.8);
     --text-color-primary: rgb(51, 51, 51);
     --text-color-grey: rgb(102 102 102);
     --color-divider: rgba(102, 102, 102, 0.3);
@@ -16,6 +17,7 @@ export const GlobalStyles = styled.createGlobalStyle`
   [data-theme="dark"] {
     --color-primary: #cf455c;
     --primary-background: black;
+    --primary-background-transparent: rgba(1, 1, 1, 0.8);
     --text-color-primary: white;
     --color-primary-transparent: rgba(207, 69, 92, 0.95);
   }

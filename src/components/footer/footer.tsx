@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
 
 export default Footer;
 
-const FooterBase = styled.div`
+const FooterBase = styled.footer`
   display: flex;
   justify-content: center;
   flex-direction: column;

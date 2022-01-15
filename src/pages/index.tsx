@@ -10,7 +10,7 @@ const Home: NextPage = () => {
       <DocumentHead pageTitle='Base' />
       <ContentCenter>
         <PageTitle>
-          Hey, I am <TextHighlight>Sanyam Dogra!</TextHighlight>
+          Hey, I&apos;m <TextHighlight>Sanyam Dogra!</TextHighlight>
         </PageTitle>
       </ContentCenter>
       <ContentCenter>

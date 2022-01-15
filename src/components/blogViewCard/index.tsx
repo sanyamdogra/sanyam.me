@@ -36,10 +36,9 @@ export const BlogViewCard: React.FC<Props> = ({
 };
 const Card = styled.a`
   cursor: pointer;
-  margin: 0.5rem 0;
-  border: 2px solid #d1d1d1;
+  margin-bottom: 1rem;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1.5rem;
   text-decoration: none;
 `;
 

@@ -8,6 +8,7 @@ import { IconContainer } from "../shared/icons";
 import { motion, Variants } from "framer-motion";
 import { DataTheme } from "../../common/types";
 import { useRouter } from "next/router";
+import { GiSpiderWeb } from "react-icons/gi";
 
 const NAV_LINKS = [
   {
@@ -154,7 +155,10 @@ const Navbar: React.FC = () => {
     <NavbarBody>
       <NavbarInner>
         <Link href='/' passHref>
-          <NavLogo />
+          {/* <NavLogo /> */}
+          <NavInitial>
+            <GiSpiderWeb />
+          </NavInitial>
         </Link>
         <NavLinks>
           <DesktopNavLinksWrapper />
@@ -179,6 +183,13 @@ const Navbar: React.FC = () => {
 
 export default Navbar;
 
+const NavInitial = styled.div`
+  font-weight: 900;
+  font-size: 30px;
+  color: var(--color-primary);
+  line-height: 0;
+`;
+
 const SideBar = styled(motion.ul)`
   height: 100vh;
   width: 100vw;
@@ -200,7 +211,7 @@ const SideBar = styled(motion.ul)`
 const NavLogo = styled.div`
   height: 25px;
   width: 25px;
-  border-radius: 50%;
+  border-radius: 5px;
   background-color: var(--color-primary);
   cursor: pointer;
   display: flex;
@@ -220,7 +231,7 @@ const NavbarBody = styled.header`
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: var(--primary-background);
+  background-color: var(--primary-background-transparent);
   ${IconWrapper}, ${NavLogo} {
     z-index: 10;
   }
