@@ -1,7 +1,7 @@
 import {
   defineDocumentType,
   makeSource,
-  ComputedFields,
+  ComputedFields
 } from "contentlayer/source-files";
 
 import rehypeSlug from "rehype-slug";
@@ -12,8 +12,8 @@ import rehypePrism from "rehype-prism-plus";
 const computedFields: ComputedFields = {
   slug: {
     type: "string",
-    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ""),
-  },
+    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, "")
+  }
 };
 const Blog = defineDocumentType(() => ({
   name: "Blog",
@@ -23,14 +23,27 @@ const Blog = defineDocumentType(() => ({
     title: { type: "string", required: true },
     publishedAt: { type: "string", required: true },
     summary: { type: "string", required: true },
-    image: { type: "string", required: false },
+    image: { type: "string", required: false }
   },
-  computedFields,
+  computedFields
+}));
+
+const Misc = defineDocumentType(() => ({
+  name: "Misc",
+  filePathPattern: "misc/*.mdx",
+  bodyType: "mdx",
+  fields: {
+    title: { type: "string", required: true },
+    publishedAt: { type: "string", required: true },
+    summary: { type: "string", required: true },
+    image: { type: "string", required: false }
+  },
+  computedFields
 }));
 
 const contentLayerConfig = makeSource({
   contentDirPath: "src/content",
-  documentTypes: [Blog],
+  documentTypes: [Blog, Misc],
   mdx: {
     rehypePlugins: [
       rehypeSlug,
@@ -40,11 +53,11 @@ const contentLayerConfig = makeSource({
         rehypeAutolinkHeadings,
         {
           properties: {
-            className: ["anchor"],
-          },
-        },
-      ],
-    ],
-  },
+            className: ["anchor"]
+          }
+        }
+      ]
+    ]
+  }
 });
 export default contentLayerConfig;

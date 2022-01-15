@@ -31,6 +31,12 @@ const FooterBase = styled.footer`
   justify-content: center;
   flex-direction: column;
   margin: 1rem 0;
+  width: 100%;
+  max-width: var(--max-width);
+
+  @media only screen and (max-width: 764px) {
+    padding: 0 1rem;
+  }
 `;
 
 const FooterContent = styled.div`

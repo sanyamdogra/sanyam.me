@@ -38,6 +38,12 @@ export const GlobalStyles = styled.createGlobalStyle`
     color: inherit;
   }
 
+  #__next {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
   * {
     box-sizing: border-box;
   }
