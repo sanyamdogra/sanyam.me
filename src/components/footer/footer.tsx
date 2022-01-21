@@ -30,7 +30,7 @@ const FooterBase = styled.footer`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 1rem 0;
+  margin: 1rem auto;
   width: 100%;
   max-width: var(--max-width);
 

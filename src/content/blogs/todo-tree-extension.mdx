@@ -1,0 +1,53 @@
+---
+title: "Revisit your Todos, effectively!"
+publishedAt: "Jan 17, 2022"
+summary: "Do you have a habit to revisit stuff after some time? 'This' will help you to keep a track onto your TODOs and be more reliable and productive!"
+---
+
+## Problem
+
+Are you like me? who likes to lay the foundation and skeleton for the code they write and then mark areas to be done in some time soon?(Hydrate your code, :p).
+I mark the areas effectively but on the fullfiling front, I miss out. If thats the case with you, let's find a way to make both the processes effective and efficient.
+
+## The CLI way
+
+We as developers use git more than we drink water (This is a reminder, drink water!). Id it's your personal project, the formalise a convention to mark
+TODOs in your commments.
+
+```bash
+//TODO - This is an example TODO that I'll check later
+//PIKACHU - Remind me to catch em all
+//JARVIS - Remind me to refactor this bit
+```
+
+Your identifier can be anything, I personally use TODO, you'll know why in a bit.
+
+Now to get the list of TODOs just do:
+
+```bash
+git grep 'TODO'
+```
+
+Boom, your terminal will show the list of your TODOs.
+If you are lazy like me, and don't want to do that greppin, there's also a simple way but
+it's editor specific.
+
+## The GUI way
+
+Extension in VS Code can really help us in being more productive. One of such is [TODO Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree).
+You can get a much smoother experience, as it has various identifiers, such as TODO, FIXME, NOTE, BUG, and more. There's a whole config that can be customised
+to your needs, so `JARVIS` is possible.
+
+You can add a this simple config to your vs code settings:
+
+```js
+ "todo-tree.highlights.customHighlight": {
+    JARVIS: {
+      foreground: "black",
+      iconColour: "red",
+      gutterIcon: true
+    }
+  }
+```
+
+This can even help cross-teams to use a common way to track in-code TODOs.

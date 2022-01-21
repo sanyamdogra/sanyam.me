@@ -12,12 +12,12 @@ Phase 2 was from June 25 to July 22 and believe me this was the shortest phase f
 
 - Select component
 
-### SVG and Icons
+## SVG and Icons
 
 Our project used SVGs from Bootstrap Italia. Sprites rollup was breaking and as a result, imports gave errors. `xlink:href` wasn't working. I had excluded these imports in the components to get rid of the errors. 
 With the help of my mentors, we were able to fix it. Now the lengthy task was to implant these imports throughout the project. After doing this our project was ready with the Icons :)
 
-### StoryPreview Implementation
+## StoryPreview Implementation
 
 Design-react-kit was ported from version 3.0.x to 5.0.x, it had many methods that were deprecated or were not future proof. One of them was withDocs( ).
 
@@ -25,7 +25,7 @@ This was a custom made function to display component and it's description in a s
 
 I had a meeting with my mentor Francesco. The meeting was to catch up on readme strategy and discuss this problem. We decided to use withInfo( ), which was the official display method. Older withDocs( ) method was removed and Storybook's withInfo( ) was implemented throughout.
 
-### Select Component
+## Select Component
 
 Select and Autocomplete were one of the most difficult components to construct. The select component we used was based on Jed Watson's [React-Select](https://github.com/JedWatson/react-select/tree/v3.0.0). My job was to update it and provide it properties corresponding to Boostrap Italia, sounds fun?
 
@@ -33,7 +33,7 @@ It sounded fun to me as well but I didn't know about the complexities we face wh
 
 He gave a good solution that would solve our problem, but working with someone else's code and that too complex one was my problem. After failed attempts, I decided to scrap the old code and write it all again by myself. I succeeded in doing so but the last thing was to make it look like Bootstrap Italia's Select component. It had all the properties but didn't follow the design guidelines which it had to. We used `ClassNamePrefix` to customize it's each inner component by CSS. At last, we did it!
 
-### Overview Of Phase-2
+## Overview Of Phase-2
 
 Although it was a shorter phase but it was a phase full of coding. Overview of the work done in this phase:
 
@@ -49,17 +49,16 @@ Although it was a shorter phase but it was a phase full of coding. Overview of t
 
 - Added a Dependabot to automize dependency update
 
-### Code Green
+## Code Green
 
 On 26th July, I got a mail from GSoC stating that I had passed the second evaluation. My mentors said that they were happy with my approach and so was I.
 
-_Onto the next phase._
+Onto the next phase.
 
 ---
 
 ##### Some mentions:
 
-- **Google Summer Of Code**
-  - [Developers Italia](https://developers.italia.it/)
-  - [Francesco Zaia](https://teamdigitale.governo.it/en/people/francesco-zaia.htm)
-  - [Silvio Relli](https://www.relli.it/)
+- [Developers Italia](https://developers.italia.it/)
+- [Francesco Zaia](https://teamdigitale.governo.it/en/people/francesco-zaia.htm)
+- [Silvio Relli](https://www.relli.it/)

@@ -5,6 +5,7 @@ import type { Blog } from ".contentlayer/types";
 import { DocumentHead } from "../../components/shared/documentHead";
 import { PageTitle, TextHighlight } from "../../components/shared/typography";
 import styled from "styled-components";
+import MDXComponents from "../../components/mdxComponents";
 
 interface Props {
   post: Blog;
@@ -22,7 +23,7 @@ export const Post: React.FC<Props> = ({ post }) => {
         <Component
           components={
             {
-              // ...components,
+              ...MDXComponents
             } as any
           }
         />
@@ -53,8 +54,12 @@ export async function getStaticProps({
 
 const LayoutWrapper = styled.div`
   margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: auto;
 
-  h3 {
+  h3,
+  h2 {
     color: var(--color-primary);
   }
 `;

@@ -38,7 +38,7 @@ const Card = styled.a`
   cursor: pointer;
   margin-bottom: 1rem;
   border-radius: 10px;
-  padding: 1.5rem;
+  padding: 1.5rem 0;
   text-decoration: none;
 `;
 

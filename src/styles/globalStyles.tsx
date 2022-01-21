@@ -11,15 +11,26 @@ export const GlobalStyles = styled.createGlobalStyle`
     --primary-background: white;
     --primary-background-transparent: rgba(255, 255, 255, 0.8);
     --text-color-primary: rgb(51, 51, 51);
-    --text-color-grey: rgb(102 102 102);
+    --text-color-grey: rgb(36, 41, 47);
     --color-divider: rgba(102, 102, 102, 0.3);
+    --code-bg: #f5f5f6;
+    --code-block-red: rgb(207, 34, 46);
+    --code-block-blue: rgb(10, 48, 105);
+    --code-block-yellow: rgb(149, 56, 0);
+    --code-block-green: rgb(17, 99, 41);
   }
   [data-theme="dark"] {
     --color-primary: #cf455c;
     --primary-background: black;
     --primary-background-transparent: rgba(1, 1, 1, 0.8);
     --text-color-primary: white;
+    --text-color-grey: rgb(201, 209, 217);
     --color-primary-transparent: rgba(207, 69, 92, 0.95);
+    --code-bg: rgba(17, 17, 17, 1);
+    --code-block-red: rgb(255, 123, 114);
+    --code-block-blue: rgb(121, 192, 255);
+    --code-block-yellow: rgb(255, 166, 87);
+    --code-block-green: rgb(126, 231, 135);
   }
 
   html,
@@ -31,17 +42,12 @@ export const GlobalStyles = styled.createGlobalStyle`
       sans-serif;
     color: var(--text-color-primary);
     background-color: var(--primary-background);
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
+    scroll-behavior: smooth;
   }
   a {
     color: inherit;
-  }
-
-  #__next {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
   }
 
   * {
@@ -54,28 +60,86 @@ export const GlobalStyles = styled.createGlobalStyle`
     padding-left: 1.625rem;
   }
 
+  pre {
+    margin: 0;
+  }
+
   code[class*="language-"],
   pre[class*="language-"] {
     color: var(--text-color-grey);
   }
 
   .rehype-code-title {
-    color: blue;
-  }
-  /* .yuyu .anchor {
-    visibility: hidden;
-    position: absolute;
-    margin-left: -1em;
-    padding-right: 0.5em;
-    width: 80%;
-    max-width: 700px;
-    cursor: pointer;
-  }
-  .anchor:hover {
-    visibility: visible;
+    color: var(--color-primary);
   }
 
-  .yuyu .anchor:after {
-    content: "#";
-  } */
+  .content pre {
+    background-color: var(--code-bg);
+    border-radius: 5px;
+    overflow-x: auto;
+    max-width: var(--max-width);
+    padding: 1rem;
+  }
+
+  pre::-webkit-scrollbar {
+    display: none;
+  }
+
+  pre {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: var(--code-block-green);
+  }
+  .token.property,
+  .token.tag,
+  .token.boolean,
+  .token.number,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+    color: var(--code-block-green);
+  }
+
+  .token.selector,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
+    color: var(--code-block-red);
+  }
+
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .token.attr-name,
+  .style,
+  .token.string,
+  .token.punctuation {
+    color: var(--code-block-blue);
+  }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword {
+    color: var(--code-block-red);
+  }
+
+  .token.function,
+  .token.class-name,
+  .token.maybe-class-name {
+    color: var(--code-block-yellow);
+  }
+
+  .token.regex,
+  .token.important,
+  .token.variable {
+    color: var(--code-block-red);
+  }
 `;

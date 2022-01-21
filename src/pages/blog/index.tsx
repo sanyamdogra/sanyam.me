@@ -20,7 +20,7 @@ interface Props {
 const Blogs: React.FC<Props> = ({ blogs }) => {
   return (
     <>
-      <DocumentHead pageTitle="Blog" />
+      <DocumentHead pageTitle='Blog' />
       <ContentCenter>
         <PageTitle>
           Not a <TextHighlight>Blog!</TextHighlight>

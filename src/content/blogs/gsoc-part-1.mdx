@@ -4,7 +4,7 @@ publishedAt: "July 25, 2019"
 summary: "Developers Italia is a community dedicated to the development of Open Source Software, created to support the Italian digital public services."
 ---
 
-### My organization
+## My organization
 
 Developers Italia is a community dedicated to the development of Open Source Software, created to support the Italian digital public services. The aim is to provide kits (documents, guides, or software) that save time and money to the Public Administration and that constitutes a solid starting point for the design and development of modern, inclusive and maintainable apps and websites.
 
@@ -18,7 +18,7 @@ Among the projects followed by the Developers Italia community, there are few Ki
 
 Among these kits, my GSoC project was to complete the Design React Kit.
 
-### Community Bonding Period
+## Community Bonding Period
 
 This period is set by Google to make students familiar with their respective organization and community. Bonding plays an important role in the completion of our project and so does this period. With the commencement of this period, a video conference was fixed with:
 
@@ -26,53 +26,69 @@ This period is set by Google to make students familiar with their respective org
 - Aymen Naghmouchi ( working on Interoperability Model)
 - Alessandro Vannoni ( working with Data Analytics Framework APIs)
 
-This meeting was for the initial introduction and understanding Developers Italia's ideology as a community. Our projects were discussed so that we had a rough idea about them and aligned ourselves for what was coming. He also advised us to ask any initial doubts regarding the project with our mentors for a smooth start. That day I made 3 new friends from Italy, _Yay!_
+---
 
-_2 more Italian friends incoming_
+<Image
+  src={"/static/images/gsoc-part-1/community-bonding.png"}
+  alt='Meeting with Leo, Aymen and Alessandro.'
+  width={600}
+  height={370}
+/>
 
-#### Meeting with Mentors
+This meeting was for the initial introduction and understanding Developers Italia's ideology as a community. Our projects were discussed so that we had a rough idea about them and aligned ourselves for what was coming. He also advised us to ask any initial doubts regarding the project with our mentors for a smooth start. That day I made 3 new friends from Italy, Yay!
+
+### Meeting with Mentors
 
 I had already prepared my doubts, now I needed some answers. After some days I had a meeting with my 2 amazing mentors:
 
 - Francesco Zaia
 - Silvio Relli
 
+<Image
+  src={"/static/images/gsoc-part-1/meeting-with-mentors.png"}
+  alt='Meeting with Francesco and Silvio.'
+  width={700}
+  height={350}
+/>
+
 I was given a brief idea about design-react-kit, Reactstrap, and Bootstrap Italia. They had also created a Github Project board filled with issues to be looked upon in Phase 1. They wanted me to take my time to align myself with the project and were never pushy regarding anything.
 
-### Phase 1
+## Phase 1
 
 Community Bonding Period was great and gave me enough time to bond with the community and start with my project with ease.
 
-#### Initial Problems
+### Initial Problems
 
 Previously the project was made on StoryBook 3.4.x and Bootstrap Italia 0.10.x, which was behind the latest versions. Recently it was ported and dependencies were updated. The StoryBook was updated to version 5.0.x and Bootstrap Italia to version 1.2.x. This introduced new features to the components but broke many existing ones. So initially my job was to bring this kit to a respectable state from where we could carry on forward.
 
 We made a new branch `next` which had the updated project with more **streamlined UI**. Now my work for the first phase could be described in 2 broad ways, i.e.
 
-- **Fixing the already made components.**
-- **Creating new components.**
+- Fixing the already made components.
+- Creating new components.
 
-#### Collateral Damage
+### Collateral Damage
 
 To achieve the updated version of our project, we updated many dependencies. Reactstrap was one of them. When I updated Reactstrap, everything looked fine until I re-ran storybook. I was greeted by a pile of errors. This was due to some deprecated components on which our kit was depended. There were around 7–8 components which were not a part Reactstrap now so I removed everything related to them, but with _care_.
 
-#### Overview of Phase 1
+### Overview of Phase 1
 
-Phase 1 was from 27 May to June 24. In this span of 30 days, I was able to solve 12 out of 13 issues. The last issue was Select Component which itself deserves a dedicated blog post, _puff!_
+Phase 1 was from 27 May to June 24. In this span of 30 days, I was able to solve 12 out of 13 issues. The last issue was Select Component which itself deserves a dedicated blog post, pff!
 
 - Popover, Progress, Button components were updated.
 - Removed jQuery dependency and updated Reactstrap.
-- Components cleanup: Toggles, Select and Autocomplete were showcased twice. Deprecated components had to be removed after Reactstrap update.
+- Components cleanup:
+  - Toggles, Select and Autocomplete were showcased twice.
+  - Deprecated components had to be removed after Reactstrap update.
 
-#### Code Green
+### Code Green
 
 Select Component was shifted to the next phase as it required more research that we thought, but apart from this, I was pretty much on track. On 28th June I got a mail from GSoC which stated that I had passed the first evaluation. It also had my mentor's positive feedback.
 
-Onwards and upwards to the _next phase._
+Onwards and upwards to the next phase.
 
-#### Ez Money
+### Ez Money
 
-There are many things that are eye pleasing, one of them is surely _'Dear Customer, your account XXXXX has been credited with ₹XX,XXX on 01-Jul-19 ...'_.
+There are many things that are eye pleasing, one of them is surely 'Dear Customer, your account XXXXX has been credited with ₹XX,XXX on 01-Jul-19 ...'.
 
 Some perks that come with GSoC.
 
@@ -80,10 +96,9 @@ Some perks that come with GSoC.
 
 ##### Some mentions:
 
-- **Google Summer Of Code**
-  - [Developers Italia](https://developers.italia.it/)
-  - [Leonardo Favario](https://teamdigitale.governo.it/en/people/leonardo-favario.html)
-  - [Aymen Naghmouchi](https://aymen.xyz/)
-  - [Alessandro Vannoni](https://alevanno.github.io/)
-  - [Francesco Zaia](https://teamdigitale.governo.it/en/people/francesco-zaia.htm)
-  - [Silvio Relli](https://www.relli.it/)
+- [Developers Italia](https://developers.italia.it/)
+- [Leonardo Favario](https://teamdigitale.governo.it/en/people/leonardo-favario.html)
+- [Aymen Naghmouchi](https://aymen.xyz/)
+- [Alessandro Vannoni](https://alevanno.github.io/)
+- [Francesco Zaia](https://teamdigitale.governo.it/en/people/francesco-zaia.htm)
+- [Silvio Relli](https://www.relli.it/)
