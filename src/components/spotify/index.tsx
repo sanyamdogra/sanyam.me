@@ -1,10 +1,16 @@
 import React, { ReactNode } from "react";
 import { FaSpotify } from "react-icons/fa";
-import styled from "styled-components";
+
 import useSWR from "swr";
 import { SpotifyNowPlaying } from "../../services/spotify/types";
 import swrFetcher from "../../services/swr/service";
 import { TextHighlight } from "../shared/typography";
+import {
+  PlayingWrapper,
+  SpotifyIcon,
+  SpotifyName,
+  MusicStatus
+} from "./styles";
 
 const Spotify = () => {
   const { data } = useSWR<SpotifyNowPlaying>("/api/spotify", swrFetcher);
@@ -30,24 +36,3 @@ const Spotify = () => {
 };
 
 export default Spotify;
-
-const PlayingWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-`;
-
-const MusicStatus = styled.span``;
-
-const SpotifyIcon = styled.div`
-  color: rgb(30, 215, 96);
-  font-size: 28px;
-  margin-right: 0.5rem;
-  line-height: 0;
-`;
-
-const SpotifyName = styled.span`
-  color: var(--text-color-grey);
-  margin-right: 0.3rem;
-  white-space: nowrap;
-`;

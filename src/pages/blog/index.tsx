@@ -5,7 +5,7 @@ import { TextHighlight, PageTitle } from "../../components/shared/typography";
 import { allBlogs } from ".contentlayer/data";
 import { pick } from "@contentlayer/client";
 import { BlogView } from "../../common/types";
-import { BlogViewCard } from "../../components/blogViewCard";
+import BlogViewCard from "../../components/blogViewCard";
 import styled from "styled-components";
 
 export async function getStaticProps() {

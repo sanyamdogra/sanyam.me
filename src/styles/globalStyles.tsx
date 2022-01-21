@@ -42,7 +42,7 @@ export const GlobalStyles = styled.createGlobalStyle`
       sans-serif;
     color: var(--text-color-primary);
     background-color: var(--primary-background);
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
     scroll-behavior: smooth;
   }
