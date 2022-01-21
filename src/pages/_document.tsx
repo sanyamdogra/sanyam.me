@@ -77,8 +77,20 @@ function checkThemePresent() {
     if (hasTheme) {
       return theme;
     }
-    return "light";
+
+    const hasPreferedDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    );
+    const hasMediaQueryPreference =
+      typeof hasPreferedDarkMode.matches === "boolean";
+
+    if (hasMediaQueryPreference) {
+      return hasPreferedDarkMode.matches ? "dark" : "light";
+    }
+
+    return "dark";
   }
+
   const colorTheme = getThemePreset();
   const root = document.documentElement;
   root.style.setProperty("--initial-data-theme", colorTheme);
