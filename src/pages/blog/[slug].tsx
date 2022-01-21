@@ -18,7 +18,10 @@ export const Post: React.FC<Props> = ({ post }) => {
     <>
       <DocumentHead pageTitle={post.title} description={post.summary} />
       <PageTitle>{post.title}</PageTitle>
-      <TextHighlight>{post.publishedAt}</TextHighlight>
+      <BlogDetails>
+        <TextHighlight>{post.publishedAt}</TextHighlight>
+        <TextHighlight>{post.readingTime.text}</TextHighlight>
+      </BlogDetails>
       <LayoutWrapper className='content'>
         <Component
           components={
@@ -62,4 +65,10 @@ const LayoutWrapper = styled.div`
   h2 {
     color: var(--color-primary);
   }
+`;
+
+const BlogDetails = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;

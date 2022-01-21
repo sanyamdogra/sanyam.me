@@ -5,6 +5,7 @@ import { ContentCenter } from "../components/shared/layoutUtils";
 import { TextHighlight, PageTitle } from "../components/shared/typography";
 import { allMiscs } from ".contentlayer/data";
 import { Misc } from ".contentlayer/types";
+import MDXComponents from "../components/mdxComponents";
 
 interface Props {
   post: Misc;
@@ -27,7 +28,13 @@ const Home: React.FC<Props> = ({ post }) => {
         </WorkLine>
       </ContentCenter>
       <IntroBlock>
-        <Component />
+        <Component
+          components={
+            {
+              ...MDXComponents
+            } as any
+          }
+        />
       </IntroBlock>
     </>
   );
