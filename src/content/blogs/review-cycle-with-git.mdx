@@ -1,0 +1,69 @@
+---
+title: "PR Review cycle without Github/Bitbucket?"
+publishedAt: "Jan 22, 2022"
+summary: "Have you ever wondered, what if one day Github, Bitbucket, Gitlab, etc. goes down? How does review cycle work then."
+---
+
+## The thought
+
+It was a normal working day, I was about to review an important PR when Bitbucket went down.
+It was the genesis moment for this thought:
+
+> What happens to the PR review cycle in a non Github world?
+
+## The answer
+
+Hopefully, after a few minutes Bitbucket was up and running, but so was that thought. I did some
+research + thinking and came to the following steps that one can follow if something urgent comes up!
+
+### 1. Branch to be reviewed
+
+Checkout to the branch you want to review, to keep it easy let's assume the
+feature branch name as `feature-branch`
+
+```bash
+git checkout -b review-branch
+```
+
+As the `review-branch` is based on `feature-branch` it will have everything that we need to review.
+
+### 2. Get the diff
+
+You all must be aware of git diff, it is used to compare two branches. Just do the following
+with the branch you want to compare it with. The base-branch can be master/main or devel, depending
+on your project.
+
+```bash
+git diff base-branch review-branch
+```
+
+The diffed output with git added/removed lines notation will be given on the terminal. Depending
+on your terminal, it may or may not be user-friendly. Skim through the changes, and open the files
+where you want to add the review comments, select a suitable line above the change and type something like
+
+```bash
+// Review-comment - Hey please change 1+1 = 3 to 1+1 = 2, thanks!
+```
+
+Add, commit and push the review changes in a fixed format with an identifier (for eg Review-comment) and handover
+the branch to the reviewee.
+
+### 3. Let it grep
+
+The `git grep` is pretty interesting and powerful, and I hope you would have guessed its usage here.
+Reviewee just has to grep the review comment identifier to get the list of all the review comments.
+
+```bash
+git grep 'Review-comment'
+```
+
+From here onwards, the changes can be pushed to the `review-branch`. Then we can merge the branch `review-branch` into the `feature-branch` and
+get that merged further into the `base-branch`.
+
+## Conclusion
+
+There may exist numerous other ways to do the review cycle without git management systems.
+This is just what I thought of as a possible solution. If you can think of other ways, do let me know!
+Also, writing this blog made me realize how important these git management systems are.
+
+> Thanks and happy reviewing!

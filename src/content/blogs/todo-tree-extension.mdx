@@ -1,17 +1,17 @@
 ---
 title: "Revisit your Todos, effectively!"
 publishedAt: "Jan 17, 2022"
-summary: "Do you have a habit to revisit stuff after some time? 'This' will help you to keep a track onto your TODOs and be more reliable and productive!"
+summary: "Do you have a habit to revisit stuff after some time? 'This' will help you to keep track of your TODOs and be more reliable and productive!"
 ---
 
 ## Problem
 
-Are you like me? who likes to lay the foundation and skeleton for the code they write and then mark areas to be done in some time soon?(Hydrate your code, :p).
-I mark the areas effectively but on the fullfiling front, I miss out. If thats the case with you, let's find a way to make both the processes effective and efficient.
+Are you like me? who likes to lay the foundation and skeleton of the code they write and then mark areas to be done some time later? (Hydrate your code, :p).
+I mark the areas effectively but on the fulfilling front, I miss out. If that's the case with you, let's find a way to make the processes easy.
 
 ## The CLI way
 
-We as developers use git more than we drink water (This is a reminder, drink water!). Id it's your personal project, the formalise a convention to mark
+We as developers use git more than we drink water (A reminder, drink water!). If it's your personal project, then formalize a convention to mark
 TODOs in your commments.
 
 ```bash
@@ -29,25 +29,26 @@ git grep 'TODO'
 ```
 
 Boom, your terminal will show the list of your TODOs.
-If you are lazy like me, and don't want to do that greppin, there's also a simple way but
+If you are lazy like me and don't want to do all that greppin, there's also a simple way but
 it's editor specific.
 
 ## The GUI way
 
 Extension in VS Code can really help us in being more productive. One of such is [TODO Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree).
-You can get a much smoother experience, as it has various identifiers, such as TODO, FIXME, NOTE, BUG, and more. There's a whole config that can be customised
+You can get a much smoother experience, as it has various default identifiers, such as TODO, FIXME, NOTE, BUG, and more. There's a whole config that can be customized
 to your needs, so `JARVIS` is possible.
 
-You can add a this simple config to your vs code settings:
+You can add this simple config to your vs code settings:
 
 ```js
- "todo-tree.highlights.customHighlight": {
-    JARVIS: {
-      foreground: "black",
-      iconColour: "red",
-      gutterIcon: true
-    }
-  }
+"todo-tree.highlights.customHighlight": {
+   JARVIS: {
+     foreground: "black",
+     iconColour: "red",
+     gutterIcon: true
+   }
+ }
 ```
 
-This can even help cross-teams to use a common way to track in-code TODOs.
+This can even help cross-teams to use a common way to track in-code TODOs but do remember to
+complete them!
