@@ -6,6 +6,8 @@ import { DocumentHead } from "../../components/shared/documentHead";
 import { PageTitle, TextHighlight } from "../../components/shared/typography";
 import styled from "styled-components";
 import MDXComponents from "../../components/mdxComponents";
+import format from "date-fns/format";
+import { DATE_FORMAT } from "../../common/constants";
 
 interface Props {
   post: Blog;
@@ -13,13 +15,14 @@ interface Props {
 
 export const Post: React.FC<Props> = ({ post }) => {
   const Component = useMDXComponent(post.body.code);
+  const formattedDate = format(new Date(post.publishedAt), DATE_FORMAT);
 
   return (
     <>
       <DocumentHead pageTitle={post.title} description={post.summary} />
       <PageTitle>{post.title}</PageTitle>
       <BlogDetails>
-        <TextHighlight>{post.publishedAt}</TextHighlight>
+        <TextHighlight>{formattedDate}</TextHighlight>
         <TextHighlight>{post.readingTime.text}</TextHighlight>
       </BlogDetails>
       <LayoutWrapper className='content'>

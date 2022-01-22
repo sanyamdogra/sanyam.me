@@ -42,7 +42,10 @@ const Blogs: React.FC<Props> = ({ blogs }) => {
               summary={b.summary}
             />
           ))
-          .reverse()}
+          .sort(
+            (a, b) =>
+              Number(new Date(b.props.date)) - Number(new Date(a.props.date))
+          )}
       </BlogViewWrapper>
     </>
   );
