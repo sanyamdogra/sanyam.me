@@ -18,6 +18,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     --code-block-blue: rgb(10, 48, 105);
     --code-block-yellow: rgb(149, 56, 0);
     --code-block-green: rgb(17, 99, 41);
+    --color-block-quote: #e5e7eb;
   }
   [data-theme="dark"] {
     --color-primary: #cf455c;
@@ -31,6 +32,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     --code-block-blue: rgb(121, 192, 255);
     --code-block-yellow: rgb(255, 166, 87);
     --code-block-green: rgb(126, 231, 135);
+    --color-block-quote: #333;
   }
 
   html,
@@ -88,6 +90,28 @@ export const GlobalStyles = styled.createGlobalStyle`
   pre {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  .content {
+    blockquote {
+      border-left: 0.25rem solid var(--color-block-quote);
+      margin: 0;
+      padding-left: 1rem;
+      font-style: italic;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-color-grey);
+    }
+  }
+
+  .content {
+    hr {
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-divider);
+      border: none;
+      margin-top: 2rem;
+    }
   }
 
   .token.comment,
