@@ -52,7 +52,11 @@ export default class MyDocument extends Document {
           <meta name='mobile-web-app-capable' content='yes' />
 
           <link rel='preconnect' href='https://fonts.googleapis.com' />
-          <link rel='preconnect' href='https://fonts.gstatic.com' />
+          <link
+            rel='preconnect'
+            href='https://fonts.gstatic.com'
+            crossOrigin='anonymous'
+          />
           <link
             href='https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap'
             rel='stylesheet'
@@ -69,6 +73,10 @@ export default class MyDocument extends Document {
     );
   }
 }
+
+const setInitialColorTheme = `(function () {
+  ${checkThemePresent.toString()}checkThemePresent();
+})()`;
 
 function checkThemePresent() {
   function getThemePreset() {
@@ -98,7 +106,3 @@ function checkThemePresent() {
     document.documentElement.setAttribute("data-theme", "dark");
   }
 }
-
-const setInitialColorTheme = `(function () {
-  ${checkThemePresent.toString()}checkThemePresent();
-})()`;
