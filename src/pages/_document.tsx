@@ -61,13 +61,6 @@ export default class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap'
             rel='stylesheet'
           />
-
-          <script
-            data-goatcounter='https://sanyamdogra.goatcounter.com/count'
-            async
-            src='//gc.zgo.at/count.js'
-          ></script>
-
           <link rel='icon' href='/favicon.ico' />
         </Head>
         <body>
