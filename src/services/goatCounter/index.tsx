@@ -2,8 +2,6 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Script from "next/script";
 
-const myWindow: any = window;
-
 export default function GCScript({
   siteUrl,
   scriptSrc
@@ -14,6 +12,8 @@ export default function GCScript({
   const router = useRouter();
 
   useEffect(() => {
+    const myWindow: any = window;
+
     const handleRouteChange = (url: string) => {
       if (!myWindow.goatcounter) return;
       myWindow.goatcounter.count({
