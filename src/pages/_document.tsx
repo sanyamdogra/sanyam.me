@@ -62,6 +62,12 @@ export default class MyDocument extends Document {
             rel='stylesheet'
           />
 
+          <script
+            data-goatcounter='https://sanyamdogra.goatcounter.com/count'
+            async
+            src='//gc.zgo.at/count.js'
+          ></script>
+
           <link rel='icon' href='/favicon.ico' />
         </Head>
         <body>
