@@ -19,7 +19,7 @@ research + thinking and came to the following steps that one can follow if somet
 ### 1. Branch to be reviewed
 
 Checkout to the branch you want to review, to keep it easy let's assume the
-feature branch name as `feature-branch`
+feature branch is named as `feature-branch`. Now from this branch do
 
 ```bash
 git checkout -b review-branch
@@ -30,14 +30,14 @@ As the `review-branch` is based on `feature-branch` it will have everything that
 ### 2. Get the diff
 
 You all must be aware of git diff, it is used to compare two branches. Just do the following
-with the branch you want to compare it with. The base-branch can be master/main or devel, depending
-on your project.
+with the branch you want to compare it with. The `base-branch` can be master/main or devel, depending
+on your project structure.
 
 ```bash
 git diff base-branch review-branch
 ```
 
-The diffed output with git added/removed lines notation will be given on the terminal. Depending
+The diffed output with git added/removed lines notation will be thrown on the terminal. Depending
 on your terminal, it may or may not be user-friendly. Skim through the changes, and open the files
 where you want to add the review comments, select a suitable line above the change and type something like
 
