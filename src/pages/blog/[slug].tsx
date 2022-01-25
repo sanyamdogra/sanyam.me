@@ -8,6 +8,7 @@ import styled from "styled-components";
 import MDXComponents from "../../components/mdxComponents";
 import format from "date-fns/format";
 import { DATE_FORMAT } from "../../common/constants";
+import { LayoutWrapper } from "../../styles/layout";
 
 interface Props {
   post: Blog;
@@ -58,20 +59,10 @@ export async function getStaticProps({
   return { props: { post } };
 }
 
-const LayoutWrapper = styled.div`
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  width: auto;
-
-  h3,
-  h2 {
-    color: var(--color-primary);
-  }
-`;
-
 const BlogDetails = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 14px;
+  margin-top: 1rem;
 `;

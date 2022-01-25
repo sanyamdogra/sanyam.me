@@ -102,6 +102,13 @@ export const GlobalStyles = styled.createGlobalStyle`
       font-weight: 600;
       color: var(--text-color-grey);
     }
+
+    h3,
+    h2 {
+      margin: 0;
+      margin-top: 1rem;
+      color: var(--color-primary);
+    }
   }
 
   .content {
@@ -111,6 +118,22 @@ export const GlobalStyles = styled.createGlobalStyle`
       background-color: var(--color-divider);
       border: none;
       margin-top: 2rem;
+    }
+  }
+
+  .about {
+    a {
+      font-size: 20px;
+      line-height: 0;
+    }
+    blockquote {
+      font-weight: 400;
+      font-size: 14px;
+    }
+
+    h3,
+    h2 {
+      color: var(--text-color-primary);
     }
   }
 

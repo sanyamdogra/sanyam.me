@@ -28,7 +28,7 @@ const Blogs: React.FC<Props> = ({ blogs }) => {
       </ContentCenter>
       <ContentCenter>
         <p>
-          <i>&quot; These are mere stories &quot;</i>
+          &quot;<i> Well, that&apos;s what they say </i>🤦‍♂️&quot;
         </p>
       </ContentCenter>
       <BlogViewWrapper>
