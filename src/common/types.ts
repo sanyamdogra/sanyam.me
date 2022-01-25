@@ -7,6 +7,7 @@ export interface BlogView {
   slug: string;
   publishedAt: string;
   summary: string;
+  published: boolean;
 }
 
 export enum SocialLinks {

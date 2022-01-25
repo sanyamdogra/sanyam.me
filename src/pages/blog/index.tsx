@@ -10,7 +10,7 @@ import styled from "styled-components";
 
 export async function getStaticProps() {
   const blogs = allBlogs.map((blog) =>
-    pick(blog, ["title", "slug", "publishedAt", "summary"])
+    pick(blog, ["title", "slug", "publishedAt", "summary", "published"])
   );
   return { props: { blogs } };
 }
@@ -18,6 +18,8 @@ interface Props {
   blogs: BlogView[];
 }
 const Blogs: React.FC<Props> = ({ blogs }) => {
+  const filteredBlogs = blogs.filter((blog) => blog.published);
+
   return (
     <>
       <DocumentHead pageTitle='Blog' />
@@ -32,7 +34,7 @@ const Blogs: React.FC<Props> = ({ blogs }) => {
         </p>
       </ContentCenter>
       <BlogViewWrapper>
-        {blogs
+        {filteredBlogs
           ?.map((b, idx) => (
             <BlogViewCard
               title={b.title}

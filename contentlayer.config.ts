@@ -22,6 +22,7 @@ const Blog = defineDocumentType(() => ({
   filePathPattern: "blogs/*.mdx",
   bodyType: "mdx",
   fields: {
+    published: { type: "boolean", required: true },
     title: { type: "string", required: true },
     publishedAt: { type: "string", required: true },
     summary: { type: "string", required: true },

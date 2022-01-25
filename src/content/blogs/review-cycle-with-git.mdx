@@ -1,4 +1,5 @@
 ---
+published: true
 title: "PR Review cycle without GitHub/Bitbucket?"
 publishedAt: "2022-01-22"
 summary: "Have you ever wondered, what if one day GitHub, Bitbucket, Gitlab, etc. goes down? How does review cycle work then."
@@ -9,11 +10,11 @@ summary: "Have you ever wondered, what if one day GitHub, Bitbucket, Gitlab, etc
 It was a normal working day, I was about to review an important PR when Bitbucket went down.
 It was the genesis moment for this thought 🤔
 
-> What happens to the PR review cycle in a non GitHub world?
+> What happens to the PR review cycle in a non-GitHub world?
 
 ## The answer
 
-Hopefully, after a few minutes Bitbucket was up and running, but the thought was still alive. I did some
+After a few minutes, Bitbucket was up and running, but the thought was still alive. I did some
 research + thinking and came to the following steps that one can follow if something urgent comes up!
 
 ### 1. Branch to be reviewed
@@ -30,7 +31,7 @@ As the `review-branch` is based on `feature-branch` it will have everything that
 ### 2. Get the diff
 
 You all must be aware of [git diff](https://git-scm.com/docs/git-diff), it is used to compare two branches. Execute the following
-with the branch you want to compare it with.
+with the branch, you want to compare it with.
 
 ```bash
 git diff base-branch review-branch
