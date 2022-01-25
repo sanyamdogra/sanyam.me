@@ -38,8 +38,13 @@ export default class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          <link rel='shortcut icon' href='/favicon.ico' />
-          <link rel='apple-touch-icon' href='/favicon.ico' />
+          <link rel='icon' href='static/favicons/favicon.ico' />
+          <link rel='shortcut icon' href='static/favicons/favicon.ico' />
+          <link
+            rel='apple-touch-icon'
+            sizes='180x180'
+            href='static/favicons/apple-touch-icon.png'
+          />
           <meta
             name='apple-mobile-web-app-title'
             content="Sanyam Dogra's Blog"
@@ -61,7 +66,19 @@ export default class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap'
             rel='stylesheet'
           />
-          <link rel='icon' href='/favicon.ico' />
+          <link
+            rel='icon'
+            type='image/png'
+            sizes='32x32'
+            href='static/favicons/favicon-32x32.png'
+          />
+          <link
+            rel='icon'
+            type='image/png'
+            sizes='16x16'
+            href='static/favicons/favicon-16x16.png'
+          />
+          <link rel='manifest' href='static/favicons/site.webmanifest'></link>
         </Head>
         <body>
           <script dangerouslySetInnerHTML={{ __html: setInitialColorTheme }} />
