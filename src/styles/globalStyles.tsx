@@ -125,6 +125,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     a {
       font-size: 20px;
       line-height: 0;
+      color: var(--text-color-primary);
     }
     blockquote {
       font-weight: 400;

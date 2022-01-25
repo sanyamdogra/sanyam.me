@@ -48,7 +48,7 @@ export async function getStaticProps() {
 export default Home;
 
 const IntroBlock = styled.div`
-  margin-top: 3rem;
+  margin-top: 2rem;
 `;
 
 const WorkLine = styled.div`

@@ -131,7 +131,7 @@ const Navbar: React.FC = () => {
       <NavbarInner>
         <Link href='/' passHref>
           <NavInitial>
-            <GiSpiderWeb />
+            <GiSpiderWeb title='Home' />
           </NavInitial>
         </Link>
         <NavLinks>
