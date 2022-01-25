@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const IconContainer = styled.a<{ $styledOnHover?: boolean }>`
+export const IconContainer = styled.a<{ styleOnHover?: boolean }>`
   font-size: 25px;
   background-color: transparent;
   border: none;
@@ -8,8 +8,8 @@ export const IconContainer = styled.a<{ $styledOnHover?: boolean }>`
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  ${({ $styledOnHover }) =>
-    $styledOnHover
+  ${({ styleOnHover }) =>
+    styleOnHover
       ? css`
           color: var(--text-color-primary);
           :hover {

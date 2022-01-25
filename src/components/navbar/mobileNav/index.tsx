@@ -20,7 +20,6 @@ const MobileNavLinksWrapper = () => (
         href={SocialLinks.TWITTER}
         target='_blank'
         rel='noopener noreferrer'
-        $styledOnHover
       >
         <FaTwitter aria-label='Twitter @sdlord07' title='Twitter @sdlord07' />
       </IconContainer>
@@ -30,11 +29,10 @@ const MobileNavLinksWrapper = () => (
         href={SocialLinks.GITHUB}
         target='_blank'
         rel='noopener noreferrer'
-        $styledOnHover
       >
         <FaGithub
-          aria-label='Github @sanyamdogra'
-          title='Github @sanyamdogra'
+          aria-label='GitHub @sanyamdogra'
+          title='GitHub @sanyamdogra'
         />
       </IconContainer>
     </NavLink>

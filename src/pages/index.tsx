@@ -53,4 +53,5 @@ const IntroBlock = styled.div`
 
 const WorkLine = styled.div`
   font-weight: 700;
+  margin: 1rem 0;
 `;

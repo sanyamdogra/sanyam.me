@@ -99,7 +99,7 @@ const Navbar: React.FC = () => {
           href={SocialLinks.TWITTER}
           target='_blank'
           rel='noopener noreferrer'
-          $styledOnHover
+          styleOnHover
         >
           <FaTwitter aria-label='Twitter @sdlord07' title='Twitter @sdlord07' />
         </IconContainer>
@@ -109,11 +109,11 @@ const Navbar: React.FC = () => {
           href={SocialLinks.GITHUB}
           target='_blank'
           rel='noopener noreferrer'
-          $styledOnHover
+          styleOnHover
         >
           <FaGithub
-            aria-label='Github @sanyamdogra'
-            title='Github @sanyamdogra'
+            aria-label='GitHub @sanyamdogra'
+            title='GitHub @sanyamdogra'
           />
         </IconContainer>
       </NavLink>
@@ -137,7 +137,7 @@ const Navbar: React.FC = () => {
         <NavLinks>
           <DesktopNavLinksWrapper />
           <NavLink>
-            <IconWrapper onClick={handleColorMode}>
+            <IconWrapper styleOnHover onClick={handleColorMode}>
               {checkDataThemeDefined}
             </IconWrapper>
           </NavLink>

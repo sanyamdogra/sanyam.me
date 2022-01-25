@@ -7,8 +7,11 @@ export const TextHighlight = styled.span`
 
 export const PageTitle = styled.h1`
   font-size: 50px;
-  font-family: Ubuntu, Inter;
+  font-family: "Ubuntu", "Inter";
   font-weight: 800;
+  margin: 0;
+  margin-top: 2rem;
+
   @media only screen and (max-width: 764px) {
     font-size: 40px;
   }
