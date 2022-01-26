@@ -21,12 +21,12 @@ export const GlobalStyles = styled.createGlobalStyle`
     --color-block-quote: #e5e7eb;
   }
   [data-theme="dark"] {
-    --color-primary: rgb(207, 69, 92);
+    --color-primary: rgba(255, 215, 0, 1);
     --primary-background: black;
     --primary-background-transparent: rgba(1, 1, 1, 0.8);
     --text-color-primary: white;
     --text-color-grey: rgb(201, 209, 217);
-    --color-primary-transparent: rgba(207, 69, 92, 0.95);
+    --color-primary-transparent: rgba(255, 155, 0, 0.95);
     --code-bg: rgba(17, 17, 17, 1);
     --code-block-red: rgb(255, 123, 114);
     --code-block-blue: rgb(121, 192, 255);

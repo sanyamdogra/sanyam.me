@@ -3,7 +3,13 @@ import React from "react";
 import Spotify from "../spotify";
 import { IoLogoVercel } from "react-icons/io5";
 import { ContentCenter } from "../shared/layoutUtils";
-import { FooterBase, Divider, FooterContent, VercelWrapper } from "./styles";
+import {
+  FooterBase,
+  Divider,
+  FooterContent,
+  VercelWrapper,
+  VerticalDivider
+} from "./styles";
 
 const Footer: React.FC = () => {
   return (
@@ -13,13 +19,11 @@ const Footer: React.FC = () => {
       </ContentCenter>
       <Spotify />
       <FooterContent>
-        Made with NextJS, TypeScript and styled-components.
-      </FooterContent>
-      <FooterContent>
-        Powered by Vercel
         <VercelWrapper>
           <IoLogoVercel />
         </VercelWrapper>
+        <VerticalDivider />
+        Powered by Vercel
       </FooterContent>
     </FooterBase>
   );

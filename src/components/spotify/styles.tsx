@@ -20,3 +20,10 @@ export const SpotifyName = styled.span`
   margin-right: 0.3rem;
   white-space: nowrap;
 `;
+
+export const SongDetail = styled.a`
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 0.3rem;
+`;

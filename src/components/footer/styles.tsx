@@ -19,11 +19,11 @@ export const FooterContent = styled.div`
   align-items: center;
   font-size: 14px;
   text-align: center;
+  margin-top: 0.5rem;
 `;
 export const VercelWrapper = styled.span`
   font-size: 18px;
   margin: 0 0.2rem;
-  line-height: 0;
 `;
 
 export const Divider = styled.div`
@@ -31,4 +31,11 @@ export const Divider = styled.div`
   width: 100%;
   background-color: var(--color-divider);
   margin-top: 2rem;
+`;
+
+export const VerticalDivider = styled.div`
+  height: 28px;
+  margin: 0 0.5rem;
+  width: 1px;
+  background-color: var(--text-color-primary);
 `;

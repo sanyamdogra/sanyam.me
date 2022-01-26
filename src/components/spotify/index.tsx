@@ -9,17 +9,32 @@ import {
   PlayingWrapper,
   SpotifyIcon,
   SpotifyName,
-  MusicStatus
+  MusicStatus,
+  SongDetail
 } from "./styles";
 
 const Spotify = () => {
   const { data } = useSWR<SpotifyNowPlaying>("/api/spotify", swrFetcher);
+  console.log(data);
 
   const playingMessage: ReactNode = data?.isPlaying ? (
     <p>
-      Currently listening to <TextHighlight>{data?.title ?? ""} </TextHighlight>
+      Currently listening to
+      <SongDetail
+        target='_blank'
+        rel='noopener noreferrer'
+        href={data?.songUrl}
+      >
+        {data?.title ?? ""}
+      </SongDetail>
       by
-      <TextHighlight> {data?.artist ?? ""}</TextHighlight>
+      <SongDetail
+        target='_blank'
+        rel='noopener noreferrer'
+        href={data?.songUrl}
+      >
+        {data?.artist ?? ""}
+      </SongDetail>
     </p>
   ) : (
     <p>Not Playing</p>

@@ -51,7 +51,9 @@ export const NavbarBody = styled.header`
   position: sticky;
   top: 0;
   width: 100%;
+  z-index: 2;
   background-color: var(--primary-background-transparent);
+
   ${IconWrapper}, ${NavLogo} {
     z-index: 10;
   }

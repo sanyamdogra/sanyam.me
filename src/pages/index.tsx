@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { DocumentHead } from "../components/shared/documentHead";
-import { ContentCenter } from "../components/shared/layoutUtils";
-import { TextHighlight, PageTitle } from "../components/shared/typography";
 import { allMiscs } from ".contentlayer/data";
 import { Misc } from ".contentlayer/types";
 import MDXComponents from "../components/mdxComponents";
+import IntroBlock from "../components/introBlock";
 
 interface Props {
   post: Misc;
@@ -17,17 +16,8 @@ const Home: React.FC<Props> = ({ post }) => {
   return (
     <>
       <DocumentHead pageTitle='Base' />
-      <ContentCenter>
-        <PageTitle>
-          Hey, I&apos;m <TextHighlight>Sanyam Dogra!</TextHighlight>
-        </PageTitle>
-      </ContentCenter>
-      <ContentCenter>
-        <WorkLine>
-          Frontend Engineer <TextHighlight>@ Rapyuta Robotics</TextHighlight>
-        </WorkLine>
-      </ContentCenter>
-      <IntroBlock>
+      <IntroBlock />
+      <InterestsBlock>
         <Component
           components={
             {
@@ -35,7 +25,7 @@ const Home: React.FC<Props> = ({ post }) => {
             } as any
           }
         />
-      </IntroBlock>
+      </InterestsBlock>
     </>
   );
 };
@@ -47,11 +37,6 @@ export async function getStaticProps() {
 
 export default Home;
 
-const IntroBlock = styled.div`
+const InterestsBlock = styled.div`
   margin-top: 2rem;
-`;
-
-const WorkLine = styled.div`
-  font-weight: 700;
-  margin: 1rem 0;
 `;
