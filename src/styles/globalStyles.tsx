@@ -109,6 +109,10 @@ export const GlobalStyles = styled.createGlobalStyle`
       margin-top: 1rem;
       color: var(--color-primary);
     }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
   }
 
   .content {

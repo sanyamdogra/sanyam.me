@@ -17,7 +17,7 @@ const Home: React.FC<Props> = ({ post }) => {
     <>
       <DocumentHead pageTitle='Base' />
       <IntroBlock />
-      <InterestsBlock>
+      <InterestsBlock className='content'>
         <Component
           components={
             {
