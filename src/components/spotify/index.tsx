@@ -4,7 +4,6 @@ import { FaSpotify } from "react-icons/fa";
 import useSWR from "swr";
 import { SpotifyNowPlaying } from "../../services/spotify/types";
 import swrFetcher from "../../services/swr/service";
-import { TextHighlight } from "../shared/typography";
 import {
   PlayingWrapper,
   SpotifyIcon,
@@ -15,7 +14,6 @@ import {
 
 const Spotify = () => {
   const { data } = useSWR<SpotifyNowPlaying>("/api/spotify", swrFetcher);
-  console.log(data);
 
   const playingMessage: ReactNode = data?.isPlaying ? (
     <p>

@@ -11,6 +11,7 @@ Also give repo a ⭐ if you like it!
 - [Next JS](https://nextjs.org/)
 - [styled-components](https://styled-components.com/)
 - [MDX](https://mdxjs.com/) + [Content Layer](https://www.contentlayer.dev/)
+- [React-icons](https://react-icons.github.io/react-icons/)
 - [Framer-motion](https://www.framer.com/motion/)
 - [SWR](https://swr.vercel.app/)
 - [Plausible.io](https://plausible.io/)

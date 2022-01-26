@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { TextHighlight } from "../shared/typography";
-import styled from "styled-components";
 import {
   IntroBase,
   DetailsWrapper,
