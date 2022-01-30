@@ -9,7 +9,7 @@ export const AvatarWrapper = styled.div`
   img {
     z-index: 0;
     border-radius: 50%;
-    border: 7px solid transparent !important;
+    border: 5px solid transparent !important;
     background: linear-gradient(
       90deg,
       rgba(207, 69, 92, 1) 40%,
