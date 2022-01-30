@@ -137,7 +137,7 @@ const Navbar: React.FC = () => {
         <NavLinks>
           <DesktopNavLinksWrapper />
           <NavLink>
-            <IconWrapper styleOnHover onClick={handleColorMode}>
+            <IconWrapper onClick={handleColorMode}>
               {checkDataThemeDefined}
             </IconWrapper>
           </NavLink>

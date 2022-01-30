@@ -24,8 +24,8 @@ const IntroBlock: React.FC = () => {
       <AvatarWrapper>
         <Image
           src={"/static/images/avatar.webp"}
-          height={256 / 2}
-          width={256 / 2}
+          height={256 / 2.2}
+          width={256 / 2.2}
           alt='Avatar Sanyam Dogra'
           priority
         />

@@ -3,13 +3,19 @@ import styled from "styled-components";
 export const AvatarWrapper = styled.div`
   @media only screen and (max-width: 764px) {
     height: auto;
-    width: 100px;
+    width: 75px;
   }
 
   img {
     z-index: 0;
     border-radius: 50%;
-    filter: grayscale(0.2);
+    border: 7px solid transparent !important;
+    background: linear-gradient(
+      90deg,
+      rgba(207, 69, 92, 1) 40%,
+      rgba(0, 151, 255, 1) 100%
+    ) !important;
+    background-origin: border-box !important;
   }
 `;
 
