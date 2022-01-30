@@ -16,7 +16,7 @@ const Spotify = () => {
   const { data } = useSWR<SpotifyNowPlaying>("/api/spotify", swrFetcher);
 
   const playingMessage: ReactNode = data?.isPlaying ? (
-    <p>
+    <>
       Currently listening to
       <SongDetail
         target='_blank'
@@ -33,9 +33,9 @@ const Spotify = () => {
       >
         {data?.artist ?? ""}
       </SongDetail>
-    </p>
+    </>
   ) : (
-    <p>Not Playing</p>
+    <>Not Playing</>
   );
   return (
     <PlayingWrapper>

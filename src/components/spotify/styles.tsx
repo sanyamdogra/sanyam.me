@@ -6,7 +6,7 @@ export const PlayingWrapper = styled.div`
   font-size: 14px;
 `;
 
-export const MusicStatus = styled.span``;
+export const MusicStatus = styled.p``;
 
 export const SpotifyIcon = styled.div`
   color: rgb(30, 215, 96);

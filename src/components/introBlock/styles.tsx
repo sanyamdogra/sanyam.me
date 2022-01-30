@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const AvatarWrapper = styled.div`
   @media only screen and (max-width: 764px) {
     height: auto;
-    width: 75px;
+    width: 80px;
   }
 
   img {
