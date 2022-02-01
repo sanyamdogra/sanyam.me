@@ -3,7 +3,7 @@ import { NavLink } from "../styles";
 import { IconContainer } from "../../shared/icons";
 import Link from "next/link";
 import { NAV_LINKS } from "../constants";
-import { FaGithub, FaTwitter } from "react-icons/fa";
+import { FiGithub, FiTwitter } from "react-icons/fi";
 import { SocialLinks } from "../../../common/types";
 
 const MobileNavLinksWrapper = () => (
@@ -21,7 +21,7 @@ const MobileNavLinksWrapper = () => (
         target='_blank'
         rel='noopener noreferrer'
       >
-        <FaTwitter aria-label='Twitter @sdlord07' title='Twitter @sdlord07' />
+        <FiTwitter aria-label='Twitter @sdlord07' title='Twitter @sdlord07' />
       </IconContainer>
     </NavLink>
     <NavLink drawer>
@@ -30,7 +30,7 @@ const MobileNavLinksWrapper = () => (
         target='_blank'
         rel='noopener noreferrer'
       >
-        <FaGithub
+        <FiGithub
           aria-label='GitHub @sanyamdogra'
           title='GitHub @sanyamdogra'
         />
