@@ -9,13 +9,13 @@ export const AvatarWrapper = styled.div`
   img {
     z-index: 0;
     border-radius: 50%;
-    border: 5px solid transparent !important;
-    background: linear-gradient(
+    border: 3px solid var(--text-color-primary) !important;
+    /* background: linear-gradient(
       90deg,
       rgba(207, 69, 92, 1) 40%,
       rgba(0, 151, 255, 1) 100%
     ) !important;
-    background-origin: border-box !important;
+    background-origin: border-box !important; */
   }
 `;
 

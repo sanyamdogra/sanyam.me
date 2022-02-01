@@ -1,8 +1,13 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { FiSun, FiMenu, FiX } from "react-icons/fi";
-import { IoMdMoon } from "react-icons/io";
-import { FaGithub, FaTwitter } from "react-icons/fa";
+import {
+  FiSun,
+  FiMenu,
+  FiX,
+  FiGithub,
+  FiTwitter,
+  FiMoon
+} from "react-icons/fi";
 import { IconContainer } from "../shared/icons";
 import { Variants } from "framer-motion";
 import { DataTheme } from "../../common/types";
@@ -78,7 +83,7 @@ const Navbar: React.FC = () => {
   };
 
   const modeIcon: React.ReactNode = dataTheme ? (
-    <IoMdMoon aria-label='Enable light mode!' title='Enable light mode!' />
+    <FiMoon aria-label='Enable light mode!' title='Enable light mode!' />
   ) : (
     <FiSun aria-label='Enable dark mode!' title='Enable dark mode!' />
   );
@@ -101,7 +106,7 @@ const Navbar: React.FC = () => {
           rel='noopener noreferrer'
           styleOnHover
         >
-          <FaTwitter aria-label='Twitter @sdlord07' title='Twitter @sdlord07' />
+          <FiTwitter aria-label='Twitter @sdlord07' title='Twitter @sdlord07' />
         </IconContainer>
       </NavLink>
       <NavLink desktop>
@@ -111,7 +116,7 @@ const Navbar: React.FC = () => {
           rel='noopener noreferrer'
           styleOnHover
         >
-          <FaGithub
+          <FiGithub
             aria-label='GitHub @sanyamdogra'
             title='GitHub @sanyamdogra'
           />

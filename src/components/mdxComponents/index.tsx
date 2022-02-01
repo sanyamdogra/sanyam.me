@@ -2,24 +2,24 @@ import React from "react";
 import RoundImage from "./components/RoundImage";
 import CustomLink from "./components/customLink";
 import { TextHighlight } from "../shared/typography";
+import { FaBehance } from "react-icons/fa";
 import {
-  FaGithub,
-  FaLinkedin,
-  FaFacebook,
-  FaDribbble,
-  FaTwitter,
-  FaBehance
-} from "react-icons/fa";
+  FiGithub,
+  FiLinkedin,
+  FiFacebook,
+  FiDribbble,
+  FiTwitter
+} from "react-icons/fi";
 
 const MDXComponents = {
   Image: RoundImage,
   a: CustomLink,
   TextHighlight,
-  FaGithub,
-  FaLinkedin,
-  FaFacebook,
-  FaDribbble,
-  FaTwitter,
+  FiGithub,
+  FiLinkedin,
+  FiFacebook,
+  FiDribbble,
+  FiTwitter,
   FaBehance
 };
 

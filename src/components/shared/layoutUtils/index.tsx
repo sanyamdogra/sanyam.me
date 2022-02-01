@@ -1,9 +1,23 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const ContentCenter = styled.div`
+export const ContentCenter = styled.div<{
+  flexCol?: boolean;
+  alignCenter?: boolean;
+}>`
   display: flex;
   justify-content: center;
+  ${({ flexCol }) =>
+    flexCol &&
+    css`
+      flex-direction: column;
+    `}
+
+  ${({ alignCenter }) =>
+    alignCenter &&
+    css`
+      align-items: center;
+    `}
 `;
 
 export const ContentLeft = styled.div`
