@@ -13,7 +13,7 @@
     "contentlayer": "^0.0.33",
     "date-fns": "^2.28.0",
     "framer-motion": "^5.5.6",
-    "next": "12.0.7",
+    "next": "^12.3.0",
     "next-contentlayer": "^0.0.33",
     "next-plausible": "^3.1.4",
     "react": "17.0.2",

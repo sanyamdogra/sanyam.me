@@ -8,6 +8,7 @@ import {
   AvatarWrapper,
   WorkLine
 } from "./styles";
+import { COMPANY_NAME, COMPANY_POSITION } from "../../common/constants";
 
 const IntroBlock: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const IntroBlock: React.FC = () => {
           <br /> I&apos;m <TextHighlight>Sanyam Dogra! </TextHighlight>
         </IntroLine>
         <WorkLine>
-          Frontend Engineer <TextHighlight>@ Rapyuta Robotics</TextHighlight>
+          {COMPANY_POSITION} <TextHighlight>@ {COMPANY_NAME}</TextHighlight>
         </WorkLine>
       </DetailsWrapper>
       <AvatarWrapper>

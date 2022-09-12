@@ -21,7 +21,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     --color-block-quote: #e5e7eb;
   }
   [data-theme="dark"] {
-    --color-primary: rgb(207, 69, 92);
+    --color-primary: rgb(250, 112, 10);
     --primary-background: black;
     --primary-background-transparent: rgba(1, 1, 1, 0.8);
     --text-color-primary: white;
