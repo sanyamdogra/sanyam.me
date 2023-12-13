@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const IconContainer = styled.a<{ styleOnHover?: boolean }>`
+export const IconContainer = styled("a")<{ styleOnHover?: boolean }>`
   font-size: 25px;
   background-color: transparent;
   border: none;

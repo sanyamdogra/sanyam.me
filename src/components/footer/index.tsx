@@ -1,7 +1,7 @@
 import React from "react";
+import { IoLogoVercel } from "react-icons/io5";
 
 import Spotify from "../spotify";
-import { IoLogoVercel } from "react-icons/io5";
 import { ContentCenter } from "../shared/layoutUtils";
 import {
   FooterBase,
@@ -10,6 +10,7 @@ import {
   VercelWrapper,
   VerticalDivider
 } from "./styles";
+import { POWERED_BY } from "../../common/constants";
 
 const Footer: React.FC = () => {
   return (
@@ -23,7 +24,7 @@ const Footer: React.FC = () => {
           <IoLogoVercel />
         </VercelWrapper>
         <VerticalDivider />
-        Powered by Vercel
+        {POWERED_BY}
       </FooterContent>
     </FooterBase>
   );

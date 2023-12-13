@@ -21,7 +21,7 @@ export const SpotifyName = styled.span`
   white-space: nowrap;
 `;
 
-export const SongDetail = styled.a`
+export const SongDetail = styled("a")`
   color: var(--color-primary);
   text-decoration: none;
   font-weight: 500;

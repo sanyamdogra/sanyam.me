@@ -80,7 +80,7 @@ export const NavLinks = styled.ul`
   align-items: center;
 `;
 
-export const NavLink = styled.li<NavLinkVariant>`
+export const NavLink = styled("li")<NavLinkVariant>`
   display: ${(props) => (props.desktop ? "none" : "flex")};
   flex-direction: row;
   align-items: center;

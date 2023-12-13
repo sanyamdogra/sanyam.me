@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-export const ContentCenter = styled.div<{
+export const ContentCenter = styled("div")<{
   flexCol?: boolean;
   alignCenter?: boolean;
 }>`

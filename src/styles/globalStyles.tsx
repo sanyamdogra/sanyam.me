@@ -26,7 +26,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     --primary-background-transparent: rgba(1, 1, 1, 0.8);
     --text-color-primary: white;
     --text-color-grey: rgb(201, 209, 217);
-    --color-primary-transparent: rgba(207, 69, 92, 0.95);
+    --color-primary-transparent: rgba(250, 112, 10, 0.93);
     --code-bg: rgba(17, 17, 17, 1);
     --code-block-red: rgb(255, 123, 114);
     --code-block-blue: rgb(121, 192, 255);

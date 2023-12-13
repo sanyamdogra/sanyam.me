@@ -37,6 +37,6 @@ export async function getStaticProps() {
 
 export default Home;
 
-const InterestsBlock = styled.div`
+const InterestsBlock = styled("div")`
   margin-top: 2rem;
 `;

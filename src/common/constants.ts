@@ -5,3 +5,4 @@ export const DEFAULT_SITE_DESCRIPTION: string =
 export const DATE_FORMAT: string = "MMM d, yyyy";
 export const COMPANY_NAME: string = "HousingAnywhere";
 export const COMPANY_POSITION: string = "Frontend Engineer";
+export const POWERED_BY = "Powered by Vercel";

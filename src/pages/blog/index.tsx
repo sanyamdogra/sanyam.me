@@ -25,7 +25,7 @@ const Blogs: React.FC<Props> = ({ blogs }) => {
       <DocumentHead pageTitle='Blog' />
       <ContentCenter>
         <PageTitle>
-          Not a <TextHighlight>Blog!</TextHighlight>
+          Lazy <TextHighlight>Blog!</TextHighlight>
         </PageTitle>
       </ContentCenter>
       <ContentCenter>
